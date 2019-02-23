@@ -6,7 +6,6 @@ Ryan England - raenglandwork@gmail.com
 Group Project: Gnomadic Conspiracy  2/11/19
 	
 Repository: https://github.com/aluminumbulb/Gnomatic_Conspiracy
-(Pretty sure that’s how this works, anyway) - A
 
 	Members:		Email:
 Adrian Miller -		adrianrichmiller@gmail.com
