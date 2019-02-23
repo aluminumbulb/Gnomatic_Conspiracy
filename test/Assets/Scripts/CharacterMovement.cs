@@ -5,12 +5,15 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour {
 	bool facingLeft = true;
 	Transform player;
+	Rigidbody2D playersRigidbody;
 	Vector3 currentPosition;
+
 	float hSpeed;
 	public float walkSpeed = 10f;
 	// Use this for initialization
 	void Start () {
-		player = GetComponent<Transform> ();	
+		player = GetComponent<Transform> ();
+		playersRigidbody = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame
@@ -20,6 +23,8 @@ public class CharacterMovement : MonoBehaviour {
 
 	void Update () {
 		hSpeed = Input.GetAxis ("Horizontal") * walkSpeed;
+
+		playersRigidbody.AddForce (Vector2.right*hSpeed);
 
 		if (facingLeft && (hSpeed > 0)) {
 			Flip ();
