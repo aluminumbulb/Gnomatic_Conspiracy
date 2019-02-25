@@ -2,6 +2,7 @@
 Adrian Miller - adrianrichmiller@gmail.com
 Jordan Fickel - forastic@gmail.com
 Ryan England - raenglandwork@gmail.com
+Travis Baker - tolvecspellcaster@gamil.com
 
 Group Project: Gnomadic Conspiracy  2/11/19
 	
@@ -10,8 +11,8 @@ Repository: https://github.com/aluminumbulb/Gnomatic_Conspiracy
 	Members:		Email:
 Adrian Miller -		adrianrichmiller@gmail.com
 Ryan England -		raenglandwork@gmail.com
-Travis Baker - 		tolvecspellcaster@gmail.com
-Jordan Fickel - 	forastic@gmail.com
+Travis Baker -          tolvecspellcaster@gmail.com
+Jordan Fickel -	        forastic@gmail.com
 
 Group Project Discussion: 
 -small manageable game as a group, while we work on our own individual game
