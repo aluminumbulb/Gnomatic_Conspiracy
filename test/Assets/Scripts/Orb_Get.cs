@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Orb_Get : MonoBehaviour {
-	public Object deleteThis;
 	private CircleCollider2D orb;
 	public GameController gameController;
 	// Use this for initialization
@@ -19,7 +18,7 @@ public class Orb_Get : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other){
 		Debug.Log ("Touched Sphere");
 		gameController.isVisible = true;
-		Destroy (deleteThis);
+		Destroy (this.gameObject);
 
 	}
 }

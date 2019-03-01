@@ -726,6 +726,7 @@ GameObject:
   - component: {fileID: 862913986}
   - component: {fileID: 862913985}
   - component: {fileID: 862913987}
+  - component: {fileID: 862913990}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -744,7 +745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e760ebfdab9d80e448f68d92d0143798, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deleteThis: {fileID: 862913984}
   gameController: {fileID: 1108601078}
 --- !u!23 &862913986
 MeshRenderer:
@@ -815,6 +815,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &862913990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 862913984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e760ebfdab9d80e448f68d92d0143798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameController: {fileID: 0}
 --- !u!1001 &883316360
 Prefab:
   m_ObjectHideFlags: 0
