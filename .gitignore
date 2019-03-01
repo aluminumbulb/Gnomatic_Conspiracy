@@ -52,3 +52,6 @@ crashlytics-build.properties
 
 #For emacs
 *~
+
+# For Macbook
+*.DS_Store
