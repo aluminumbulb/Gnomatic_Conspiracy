@@ -7,6 +7,7 @@ public class CharacterMovement : MonoBehaviour {
 	Transform player;
 	Rigidbody2D playersRigidbody;
 	Vector3 currentPosition;
+	GameObject lastCheckpoint;
 
 	float hSpeed;
 	public float walkSpeed = 10f;
@@ -35,6 +36,38 @@ public class CharacterMovement : MonoBehaviour {
 		}
 
 	}
+
+	public void updateCheckpoint(GameObject other) {
+		lastCheckpoint = other;
+	}
+
+	public void hasBeenHurt() {
+		if (lastCheckpoint != null) {
+			transform.position = lastCheckpoint.transform.position;
+			transform.rotation = lastCheckpoint.transform.rotation;
+		} else {
+			playersRigidbody.AddForce (Vector2.up * 14);
+		}
+	}
+
+	/** void OnTriggerEnter2d(Collider2D other) {
+		// Saves the last checkpoint you touched.
+		Checkpoint respawn = other.GetComponent<Checkpoint> ();
+		if (respawn != null) {
+			lastCheckpoint = other.gameObject;
+		}
+
+		// If you get hurt, go to the checkpoint.
+		PainfulObject ouch = other.GetComponent<PainfulObject> ();
+		if (ouch != null) {
+			if (lastCheckpoint != null) {
+				transform.position = lastCheckpoint.transform.position;
+				transform.rotation = lastCheckpoint.transform.rotation;
+			} else {
+				playersRigidbody.AddForce (Vector2.up * 14);
+			}
+		}
+	} */
 
 	//Flips transform and thereby all children.
 	void Flip(){

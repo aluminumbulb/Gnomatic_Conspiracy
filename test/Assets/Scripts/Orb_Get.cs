@@ -16,9 +16,11 @@ public class Orb_Get : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
-		Debug.Log ("Touched Sphere");
-		gameController.isVisible = true;
-		Destroy (this.gameObject);
-
+		CharacterMovement player = other.GetComponent<CharacterMovement> ();
+		if (player != null) {
+			Debug.Log ("Touched Sphere");
+			gameController.isVisible = true;
+			Destroy (this.gameObject);
+		}
 	}
 }
