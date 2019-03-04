@@ -14,6 +14,8 @@ public class Checkpoint : MonoBehaviour {
 		
 	}
 
+	// When this object collides with an object with the CharacterMovement
+	// script, calls their updateCheckpoint() function with this game object.
 	void OnTriggerEnter2d(Collider2D other) {
 		CharacterMovement player = other.GetComponent<CharacterMovement> ();
 		if (player != null) {

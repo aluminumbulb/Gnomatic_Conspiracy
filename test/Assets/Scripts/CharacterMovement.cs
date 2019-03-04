@@ -51,20 +51,29 @@ public class CharacterMovement : MonoBehaviour {
 		}
 	}
 
-
+	// Records the last checkpoint touched. Called by the Checkpoint script.
 	public void updateCheckpoint(GameObject other) {
 		lastCheckpoint = other;
 	}
 
+	/**
+	 * If called, teleports the player to the last checkpoint touched.
+	 * If the player hasn't touched a checkpoint, then it triggers a jump.
+	 * Not finalized yet.
+	 * */
 	public void hasBeenHurt() {
 		if (lastCheckpoint != null) {
 			transform.position = lastCheckpoint.transform.position;
 			transform.rotation = lastCheckpoint.transform.rotation;
 		} else {
-			playersRigidbody.AddForce (Vector2.up * 14);
+			playersRigidbody.AddForce (Vector2.up * jumpForce);
 		}
 	}
 
+	// Old code. Kept for posterity, will be deleted later.
+	// It's a combination of UpdateCheckpoint and hasBeenHurt that kept
+	// all collision detection inside this class instead of in
+	// the Checkpoint and PainfulObject scripts.
 	/** void OnTriggerEnter2d(Collider2D other) {
 		// Saves the last checkpoint you touched.
 		Checkpoint respawn = other.GetComponent<Checkpoint> ();
