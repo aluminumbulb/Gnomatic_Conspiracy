@@ -12,13 +12,12 @@ public class Orb_Get : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		transform.Rotate (0, 10, 0);
+		transform.Rotate (0, 1, 0);
 	}
 
 	void OnTriggerEnter2D(Collider2D other){
 		CharacterMovement player = other.GetComponent<CharacterMovement> ();
 		if (player != null) {
-			Debug.Log ("Touched Sphere");
 			gameController.isVisible = true;
 			Destroy (this.gameObject);
 		}
