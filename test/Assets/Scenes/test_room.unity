@@ -318,8 +318,13 @@ Prefab:
     - target: {fileID: 114483844463441568, guid: 2ec87eed77d99674b85a9b1f3ca82311,
         type: 2}
       propertyPath: jumpForce
-      value: 500
+      value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 114483844463441568, guid: 2ec87eed77d99674b85a9b1f3ca82311,
+        type: 2}
+      propertyPath: lastCheckpoint
+      value: 
+      objectReference: {fileID: 23675595}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
   m_IsPrefabParent: 0
