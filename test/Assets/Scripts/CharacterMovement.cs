@@ -7,7 +7,7 @@ public class CharacterMovement : MonoBehaviour {
 	Transform player;
 	Rigidbody2D playersRigidbody;
 	Vector3 currentPosition;
-	GameObject lastCheckpoint;
+	[SerializeField] private GameObject lastCheckpoint;
 
 	//Jumping variables
 	public bool jumping;
