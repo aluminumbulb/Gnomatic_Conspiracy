@@ -42,13 +42,22 @@ public class CharacterMovement : MonoBehaviour {
 			Flip ();
 		}
 	
+
 		//jumping controls, Travis
 		if (Input.GetKey (KeyCode.W) || Input.GetKey (KeyCode.UpArrow) || Input.GetKey (KeyCode.Space)) {
 				if (!jumping) {
 					playersRigidbody.AddForce (Vector2.up * jumpForce);
 					jumping = true;	
-				}	
+				}
 		}
+	}
+
+	void OnCollisionEnter2D(Collision2D other){
+		jumping = false;
+	}
+
+	void OnCollisionExit2D(Collision2D other){
+		jumping = true;
 	}
 
 	// Records the last checkpoint touched. Called by the Checkpoint script.
