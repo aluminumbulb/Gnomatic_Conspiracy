@@ -93,3 +93,10 @@ Elementary Goals (30 Minutes Exploration):
 	- Visually Cute, nice.
 		- Death implied through crossed over eyes.
 		- 
+BIBLIOGRAPHY
+Unity API and Manual
+https://docs.unity3d.com/2017.4/Documentation/ScriptReference/index.html
+
+Player Controller Script:
+https://www.youtube.com/watch?v=MbWK8bCAU2w
+
