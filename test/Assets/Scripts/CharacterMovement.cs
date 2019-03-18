@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -61,6 +60,10 @@ public class CharacterMovement : MonoBehaviour {
 		jumping = true;
 	}
 
+	void WallCling(){
+		
+	}
+
 	// Records the last checkpoint touched. Called by the Checkpoint script.
 	public void updateCheckpoint(GameObject other) {
 		lastCheckpoint = other;
@@ -109,17 +112,6 @@ public class CharacterMovement : MonoBehaviour {
 		player.RotateAround (currentPosition, Vector3.up, 180f);
 	}
 }
-=======
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class CharacterMovement : MonoBehaviour {
-	bool facingLeft = true;
-	Transform player;
-	Rigidbody2D playersRigidbody;
-	Vector3 currentPosition;
-	[SerializeField] private GameObject lastCheckpoint;
 
 	//Jumping variables
 	public bool jumping;
@@ -211,4 +203,3 @@ public class CharacterMovement : MonoBehaviour {
 		player.RotateAround (currentPosition, Vector3.up, 180f);
 	}
 }
->>>>>>> b09c5df534e55acf6394b9b0b3d80a7c8038a649
