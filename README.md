@@ -97,6 +97,13 @@ BIBLIOGRAPHY
 Unity API and Manual
 https://docs.unity3d.com/2017.4/Documentation/ScriptReference/index.html
 
+Unity Tutorials Page
+https://unity3d.com/learn/tutorials
+
 Player Controller Script:
 https://www.youtube.com/watch?v=MbWK8bCAU2w
 
+The following unity forum users:
+keely's - iterating through a tilemap
+bigmisterb - iterating through components
+burnumd - Getting all objects in a scene by their components
