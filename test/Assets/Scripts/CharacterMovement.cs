@@ -11,15 +11,20 @@ public class CharacterMovement : MonoBehaviour {
 
 	//Jumping variables
 	public bool jumping;
-	public float jumpForce = 100.0f;
+	public float jumpForce = 200.0f;
 
 
 	float hSpeed;
-	public float walkSpeed = 10f;
+	public float walkSpeed = 100f;
 
+	//Touchscreen Variables
+	private float leftSideEnd;
+	private float rightSideStart;
 
 	// Use this for initialization
 	void Start () {
+		leftSideEnd = Screen.width / 4.0f;
+		rightSideStart = 3 * (Screen.width) / 4.0f;
 		player = GetComponent<Transform> ();
 		playersRigidbody = GetComponent<Rigidbody2D> ();
 	}
@@ -50,6 +55,33 @@ public class CharacterMovement : MonoBehaviour {
 					jumping = true;	
 				}
 		}
+
+		//Mobile Controlls:
+
+		if (Input.touchCount > 1) {
+			if (Input.GetTouch (0).position.x < leftSideEnd && Input.GetTouch (1).position.x > rightSideStart) {
+				if (!jumping) {
+					playersRigidbody.AddForce (Vector2.up * jumpForce);
+					jumping = true;	
+				}
+			} else if (Input.GetTouch (1).position.x < leftSideEnd && Input.GetTouch (0).position.x > rightSideStart) {
+				if (!jumping) {
+					playersRigidbody.AddForce (Vector2.up * jumpForce);
+					jumping = true;	
+				}
+			}
+		} else {
+			Touch playerTouch = Input.GetTouch (0);
+			if (playerTouch.position.x < leftSideEnd) {
+				playersRigidbody.AddForce (Vector2.left * walkSpeed * Time.deltaTime);
+			}
+
+			if (playerTouch.position.x > rightSideStart) {
+				playersRigidbody.AddForce (Vector2.right * walkSpeed * Time.deltaTime);
+			}
+		}
+
+		
 	}
 
 	void Flip(){

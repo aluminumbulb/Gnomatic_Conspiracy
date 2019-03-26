@@ -2,30 +2,79 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*This is the presently functional color switch code
- * it only works on single elements, which might be 
- * a choke point of later prodction, so I'm working on
- * TileMap Switchable to affect whole maps
+/*
+ * This code should be appplied to all objects not part of the tilemap.
  */
 
 public class ForegroundSwitchableIndividual : MonoBehaviour {
-	//public bool isVisible = false;
 	public GameController gameController;
-	private SpriteRenderer sirRender;
-	private BoxCollider2D outline;
-	public float s_red = 255.0f, s_green = 255.0f, s_blue = 255.0f; 
+	private SpriteRenderer[] sirRender;
+	private Collider2D[] _colliders;
+	public Color preferredColor;
+	public enum ColorArea{Red,Green,Blue};
+	public ColorArea myColorArea;
+
+	private float preferred_red, preferred_green, preferred_blue; 
 	Color s_combined;
+
+	/*
+	 * The way this bit is coded, all switchable objects MUST have
+	 * a composite collider
+	 */
+
 	void Start (){
-		outline = GetComponent<BoxCollider2D> ();
-		sirRender = GetComponent<SpriteRenderer> ();
+		_colliders = GetComponents<Collider2D>();
+		preferred_red = preferredColor.r;
+		preferred_green = preferredColor.g;
+		preferred_blue = preferredColor.b;
+		foreach (Collider2D collider in _colliders) {
+			collider.enabled = false;
+		}
+
+		sirRender = GetComponentsInChildren<SpriteRenderer> ();
+
 	}	
 
-	//This should be switched out with a code that is called only once9
-	void Update () {
-		s_combined = new Color (s_red, s_green, s_blue);
-		outline.enabled = gameController.isVisible;
-		if (gameController.isVisible) {
-			sirRender.color = s_combined;
+	/*
+	 * The assumption I am making at this time is this is all one level, and 
+	 * the player can only get one orb at a time, in sequential order.
+	 */ 
+
+	void solidify(){
+		foreach (Collider2D collider in _colliders) {
+			collider.enabled = true;
 		}
+	}
+
+	public void colorize(){
+
+		if (gameController.orbGetRed){
+			s_combined = new Color (preferred_red, 0f, 0f);
+			if (myColorArea == ColorArea.Red) {
+				solidify ();
+			}
+		}
+
+		if (gameController.orbGetGreen) {
+			s_combined = new Color (preferred_red, preferred_green, 0f);
+			if (myColorArea == ColorArea.Green) {
+				solidify ();
+			}
+		}
+
+		if (gameController.orbGetBlue) {
+			s_combined = preferredColor;
+			if (myColorArea == ColorArea.Blue) {
+				solidify ();
+			}
+		}
+
+		foreach (SpriteRenderer s_render in sirRender) {
+			s_render.color = s_combined;
+		}
+	}
+		
+	void Update () {
+		
 	}
 }

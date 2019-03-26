@@ -10,23 +10,22 @@ public class TilemapSwitchable : MonoBehaviour {
 	private string changeName; 
 	public Color changeColor;
 
-
 	void Start (){
 		outline = GetComponent<TilemapCollider2D> ();
 		outline.enabled = false;
 		_tilemap = GetComponent<Tilemap> ();
 	}	
-		void Update () {
-			if (gameController.isVisible) {
-			_tilemap.color = changeColor;
+
+	void onOrbGet(){
+		outline.enabled = true;
+	}
+
+	void Update () {
 			//_tilemap.color = Color.red;
-			outline.enabled = true;
 			//This foreach credt goes to Unity forums user 'keely'
 			//This will be used if we want to change the sprites themselves instead of just color
 			//foreach (Vector3Int position in _tilemap.cellBounds.allPositionsWithin) {
 				//changeling = _tilemap.GetSprite (position);
 				//changeName = (changeling.name +"_Switched");
-			}
-			gameController.isVisible = false;
 	}
 }
