@@ -7,10 +7,12 @@ public class CharacterMovement : MonoBehaviour {
 	Transform player;
 	Rigidbody2D playersRigidbody;
 	Vector3 currentPosition;
+	Vector2 lockPosition;
 	GameObject lastCheckpoint;
 
 	//Jumping variables
 	public bool jumping;
+	bool locked = false;
 	public float jumpForce = 200.0f;
 
 
@@ -56,6 +58,8 @@ public class CharacterMovement : MonoBehaviour {
 				}
 		}
 
+		WallCling ();
+
 		//Mobile Controlls:
 
 		if (Input.touchCount > 1) {
@@ -81,6 +85,8 @@ public class CharacterMovement : MonoBehaviour {
 			}
 		}
 
+
+
 		
 	}
 
@@ -98,7 +104,27 @@ public class CharacterMovement : MonoBehaviour {
 	}
 
 	void WallCling(){
-		
+		LayerMask clingable = LayerMask.GetMask ("Foreground");
+		RaycastHit2D wallRight = Physics2D.Raycast (transform.position, Vector2.right, .0001f, clingable);
+		RaycastHit2D wallLeft = Physics2D.Raycast (transform.position, Vector2.left);
+		if (wallRight.collider != null) {
+			//float distance = Mathf.Abs (wallRight.point.x - transform.position.x);
+				Debug.Log ("Can Cling");
+			if (!locked) {
+				lockPosition = transform.position;
+			}
+			if(Input.GetKeyDown (KeyCode.Space)) {
+				locked = true;
+					jumping = true;
+					transform.position = lockPosition;
+				}
+
+				if (Input.GetKeyUp (KeyCode.Space)) {
+					jumping = false;
+					locked = false;
+					playersRigidbody.AddForce (new Vector2 (-1f, 1f), ForceMode2D.Impulse);
+				}
+		}
 	}
 
 	// Records the last checkpoint touched. Called by the Checkpoint script.
