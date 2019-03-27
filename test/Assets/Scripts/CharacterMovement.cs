@@ -97,6 +97,11 @@ public class CharacterMovement : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other){
 		jumping = false;
+		if (other.gameObject.tag == "Painful Object") {
+			hasBeenHurt ();
+		} else if (other.gameObject.tag == "Respawn") {
+			updateCheckpoint (other.gameObject);
+		}
 	}
 
 	void OnCollisionExit2D(Collision2D other){
