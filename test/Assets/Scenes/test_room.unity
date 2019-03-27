@@ -122,26 +122,14 @@ GameObject:
   m_Component:
   - component: {fileID: 23675598}
   - component: {fileID: 23675597}
-  - component: {fileID: 23675596}
   - component: {fileID: 23675599}
   m_Layer: 0
   m_Name: RespawnSquare
-  m_TagString: Untagged
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &23675596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 23675595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 643d6313e763847e289db5791b33704f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &23675597
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -208,7 +196,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -493,7 +481,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &721841453
 GameObject:
@@ -637,7 +625,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1108306366}
   - component: {fileID: 1108306365}
-  - component: {fileID: 1108306364}
   - component: {fileID: 1108306367}
   m_Layer: 0
   m_Name: PainfulRock
@@ -646,17 +633,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1108306364
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1108306363}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a38cc5d635e1545d8935fce465a5dfe0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &1108306365
 SpriteRenderer:
   m_ObjectHideFlags: 0
