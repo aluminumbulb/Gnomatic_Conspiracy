@@ -9,11 +9,13 @@ public class CharacterMovement : MonoBehaviour {
 	Vector3 currentPosition;
 	Vector2 lockPosition;
 	GameObject lastCheckpoint;
+	bool locked = false;
+
 
 	//Jumping variables
 	public bool jumping;
-	bool locked = false;
-	public float jumpForce = 500.0f;
+
+	public float jumpForce = 200.0f;
 
 
 	float hSpeed;
@@ -75,15 +77,13 @@ public class CharacterMovement : MonoBehaviour {
 				}
 			}
 		} else {
-			if (Input.touchCount == 1) {
-				Touch playerTouch = Input.GetTouch (0);
-				if (playerTouch.position.x < leftSideEnd) {
-					playersRigidbody.AddForce (Vector2.left * walkSpeed * Time.deltaTime);
-				}
+			Touch playerTouch = Input.GetTouch (0);
+			if (playerTouch.position.x < leftSideEnd) {
+				playersRigidbody.AddForce (Vector2.left * walkSpeed * Time.deltaTime);
+			}
 
-				if (playerTouch.position.x > rightSideStart) {
-					playersRigidbody.AddForce (Vector2.right * walkSpeed * Time.deltaTime);
-				}
+			if (playerTouch.position.x > rightSideStart) {
+				playersRigidbody.AddForce (Vector2.right * walkSpeed * Time.deltaTime);
 			}
 		}
 
@@ -105,8 +105,6 @@ public class CharacterMovement : MonoBehaviour {
 		jumping = true;
 	}
 
-	//Wall cling script based on raycast method
-	//Most of these instantiations should be moved further up, I'm just testing them here.
 	void WallCling(){
 		LayerMask clingable = LayerMask.GetMask ("Foreground");
 		RaycastHit2D grounded =  Physics2D.Raycast (transform.position, Vector2.down, 2.5f, clingable);
@@ -116,24 +114,22 @@ public class CharacterMovement : MonoBehaviour {
 		RaycastHit2D wallRight = Physics2D.Raycast (transform.position, Vector2.right, .75f, clingable);
 		RaycastHit2D wallLeft = Physics2D.Raycast (transform.position, Vector2.right, .75f, clingable);
 		if ((wallRight.collider != null && grounded.collider == null) || (wallLeft.collider != null && grounded.collider == null)) {
+
 				Debug.Log ("Can Cling");
-			jumping = true;
-			lockPosition = transform.position; 
-			//Freezes character in place if bar is held
-			if(Input.GetKey (KeyCode.Space)) {
-				transform.position = lockPosition;
+			if (!locked) {
+				lockPosition = transform.position;
 			}
-
-			if (Input.GetKeyUp (KeyCode.Space)) {
-				jumping = false;
-				if (wallRight.collider != null) {
-					playersRigidbody.AddForce (new Vector2 (-10f, 10f), ForceMode2D.Impulse);
+			if(Input.GetKeyDown (KeyCode.Space)) {
+				locked = true;
+					jumping = true;
+					transform.position = lockPosition;
 				}
 
-				if (wallLeft.collider != null) {
-				playersRigidbody.AddForce (new Vector2 (10f, 10f), ForceMode2D.Impulse);
+				if (Input.GetKeyUp (KeyCode.Space)) {
+					jumping = false;
+					locked = false;
+					playersRigidbody.AddForce (new Vector2 (-1f, 1f), ForceMode2D.Impulse);
 				}
-			}
 		}
 	}
 
