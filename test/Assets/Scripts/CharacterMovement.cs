@@ -75,13 +75,15 @@ public class CharacterMovement : MonoBehaviour {
 				}
 			}
 		} else {
-			Touch playerTouch = Input.GetTouch (0);
-			if (playerTouch.position.x < leftSideEnd) {
-				playersRigidbody.AddForce (Vector2.left * walkSpeed * Time.deltaTime);
-			}
+			if (Input.touchCount == 1) {
+				Touch playerTouch = Input.GetTouch (0);
+				if (playerTouch.position.x < leftSideEnd) {
+					playersRigidbody.AddForce (Vector2.left * walkSpeed * Time.deltaTime);
+				}
 
-			if (playerTouch.position.x > rightSideStart) {
-				playersRigidbody.AddForce (Vector2.right * walkSpeed * Time.deltaTime);
+				if (playerTouch.position.x > rightSideStart) {
+					playersRigidbody.AddForce (Vector2.right * walkSpeed * Time.deltaTime);
+				}
 			}
 		}
 
