@@ -9,10 +9,12 @@ public class CharacterMovement : MonoBehaviour {
 	Vector3 currentPosition;
 	Vector2 lockPosition;
 	GameObject lastCheckpoint;
+	bool locked = false;
+
 
 	//Jumping variables
 	public bool jumping;
-	bool locked = false;
+
 	public float jumpForce = 200.0f;
 
 
@@ -105,10 +107,14 @@ public class CharacterMovement : MonoBehaviour {
 
 	void WallCling(){
 		LayerMask clingable = LayerMask.GetMask ("Foreground");
-		RaycastHit2D wallRight = Physics2D.Raycast (transform.position, Vector2.right, .0001f, clingable);
-		RaycastHit2D wallLeft = Physics2D.Raycast (transform.position, Vector2.left);
-		if (wallRight.collider != null) {
-			//float distance = Mathf.Abs (wallRight.point.x - transform.position.x);
+		RaycastHit2D grounded =  Physics2D.Raycast (transform.position, Vector2.down, 2.5f, clingable);
+		if (grounded.collider) {
+			//Debug.Log ("Touching Ground");
+		}
+		RaycastHit2D wallRight = Physics2D.Raycast (transform.position, Vector2.right, .75f, clingable);
+		RaycastHit2D wallLeft = Physics2D.Raycast (transform.position, Vector2.right, .75f, clingable);
+		if ((wallRight.collider != null && grounded.collider == null) || (wallLeft.collider != null && grounded.collider == null)) {
+
 				Debug.Log ("Can Cling");
 			if (!locked) {
 				lockPosition = transform.position;

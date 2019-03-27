@@ -9,19 +9,22 @@ public class Orb_Get : MonoBehaviour {
 	public enum orbType{Red, Green, Blue};
 	public orbType myOrbType;
 
+
 	// Use this for initialization
-	void Start () {
-		orb = GetComponent<CircleCollider2D> ();
+	void Start () { 
+		//orb = GetComponent<CircleCollider2D> ();
 		//myOrbType = orbType.Red;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		RaycastHit2D surrounding = Physics2D.CircleCast(transform.position,0.65f,new Vector2(0,0));
+		if (surrounding.collider != null) {
+			gotten ();
+		}
 	}
 
-	void OnTriggerEnter2D(Collider2D other){
-		CharacterMovement player = other.GetComponent<CharacterMovement> ();
-		if (player != null) {
+	void gotten(){
 			if(myOrbType == orbType.Red){
 				gameController.orbGetRed = true;
 			}
@@ -35,5 +38,4 @@ public class Orb_Get : MonoBehaviour {
 			gameController.paintWorld ();
 			Destroy (this.gameObject);
 		}
-	}
 }
