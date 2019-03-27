@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -112,7 +111,7 @@ public class CharacterMovement : MonoBehaviour {
 		LayerMask clingable = LayerMask.GetMask ("Foreground");
 		RaycastHit2D grounded =  Physics2D.Raycast (transform.position, Vector2.down, 2.5f, clingable);
 		if (grounded.collider) {
-			Debug.Log ("Touching Ground");
+			//Debug.Log ("Touching Ground");
 		}
 		RaycastHit2D wallRight = Physics2D.Raycast (transform.position, Vector2.right, .75f, clingable);
 		RaycastHit2D wallLeft = Physics2D.Raycast (transform.position, Vector2.right, .75f, clingable);
