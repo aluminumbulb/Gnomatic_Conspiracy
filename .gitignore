@@ -55,3 +55,8 @@ crashlytics-build.properties
 
 # For Macbook
 *.DS_Store
+
+# Wierd files that are continuously deleted.
+test/Assets/Cinemachine/Timeline/LegacyTimelineAPI.unitypackage.meta
+test/Assets/Cinemachine/CinemachineExamples.unitypackage.meta
+
