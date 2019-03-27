@@ -19,6 +19,7 @@ public class HurtfulObject : MonoBehaviour {
 			GameObject hitObject = hit.transform.gameObject;
 			if (hitObject.GetComponent<Player> ()) {
 				hitObject.transform = destination;
+				Debug.Log ("Ouch!");
 			}
 		}
 	}
