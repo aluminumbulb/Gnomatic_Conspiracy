@@ -13,7 +13,14 @@ public class HurtfulObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		Vector2 ray = new Vector2 (transform.position, transform.up);
+		RaycastHit2D hit = Physics2D.CircleCast (transform.position, 1.0f, transform.up);
+		if (hit) {
+			GameObject hitObject = hit.transform.gameObject;
+			if (hitObject.GetComponent<Player> ()) {
+				hitObject.transform = destination;
+			}
+		}
 	}
 
 	void OnDrawGizmos () {
