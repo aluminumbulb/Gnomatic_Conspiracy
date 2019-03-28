@@ -41,6 +41,7 @@ public class ForegroundSwitchableIndividual : MonoBehaviour {
 	 */ 
 
 	void solidify(){
+		gameObject.layer = 8;
 		foreach (Collider2D collider in _colliders) {
 			collider.enabled = true;
 		}

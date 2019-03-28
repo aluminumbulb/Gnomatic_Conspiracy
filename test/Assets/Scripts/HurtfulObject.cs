@@ -18,7 +18,8 @@ public class HurtfulObject : MonoBehaviour {
 		if (hit) {
 			GameObject hitObject = hit.transform.gameObject;
 			if (hitObject.GetComponent<Player> ()) {
-				hitObject.transform = destination;
+				//Fixed this, sorry for butting in, tranform isnt implicitly a vector 3, gotta get its position - Adrian
+				hitObject.transform.position = destination;
 				Debug.Log ("Ouch!");
 			}
 		}
