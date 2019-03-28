@@ -5,8 +5,8 @@ public class PlayerInput : MonoBehaviour
 {
     private Player player;
 
-	bool leftSideTouched = false;
-	bool rightSideTouched = false;
+	int leftSideTouched = 0;
+	int rightSideTouched = 0;
 	Rect leftSide,rightSide;
 
     private void Start()
@@ -45,28 +45,26 @@ public class PlayerInput : MonoBehaviour
 
 			for (int j = 0; j < touchPlaces.Length; j++) {
 				if (leftSide.Contains (touchPlaces [j])) {
-					leftSideTouched = true;
+					leftSideTouched++;
 				}
 				
 				if (rightSide.Contains (touchPlaces [j])) {
-					rightSideTouched = true;
+					rightSideTouched++;
 				}
 			}
 
-			if (rightSideTouched && !leftSideTouched) {
+			if (rightSideTouched == 1 && leftSideTouched == 0) {
 				player.SetDirectionalInput (Vector2.right);
 			}
 
-			if (!rightSideTouched && leftSideTouched) {
+			if (rightSideTouched == 0 && leftSideTouched == 1) {
 				player.SetDirectionalInput (Vector2.left);
 			}
 
-			if (rightSideTouched && leftSideTouched) {
+			if (rightSideTouched == 1 && leftSideTouched == 1) {
 				player.OnJumpInputDown();
 			}
 		}
 		//player.OnJumpInputUp();
-		leftSideTouched = false;
-		rightSideTouched = false;
 	}
 }
