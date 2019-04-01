@@ -59,3 +59,27 @@ public class MobileControllTest : MonoBehaviour {
 		rightSideTouched = false;
 	}
 }
+/*
+ * Old Code, please ignore
+ * 	for (int j = 0; j < touchPlaces.Length; j++) {
+				if (leftSide.Contains (touchPlaces [j])) {
+					leftSideTouched++; 
+				}
+				
+				if (rightSide.Contains (touchPlaces [j])) {
+					rightSideTouched++;
+				}
+			}
+
+			if (rightSideTouched > 1 && leftSideTouched == 0) {
+				player.SetDirectionalInput (Vector2.right);
+			}
+
+			if (rightSideTouched == 0 && leftSideTouched > 1) {
+				player.SetDirectionalInput (Vector2.left);
+			}
+
+			if (rightSideTouched > 1 && leftSideTouched < 1) {
+				player.OnJumpInputDown();
+			}
+ */
