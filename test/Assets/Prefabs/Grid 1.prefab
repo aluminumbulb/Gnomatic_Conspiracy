@@ -360,7 +360,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 114361432261596876, guid: 6fa5ed74e1fbb8c4cb90d3a82d32a66b,
     type: 2}
-  changeColor: {r: 0, g: 1, b: 0, a: 1}
+  preferredColor: {r: 0, g: 0, b: 0, a: 0}
+  myColorArea: 0
 --- !u!114 &114697890594380642
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -374,7 +375,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 114361432261596876, guid: 6fa5ed74e1fbb8c4cb90d3a82d32a66b,
     type: 2}
-  changeColor: {r: 0, g: 0, b: 1, a: 1}
+  preferredColor: {r: 0, g: 0, b: 0, a: 0}
+  myColorArea: 0
 --- !u!114 &114919275453388892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -388,7 +390,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameController: {fileID: 114361432261596876, guid: 6fa5ed74e1fbb8c4cb90d3a82d32a66b,
     type: 2}
-  changeColor: {r: 0.99264705, g: 0, b: 0, a: 1}
+  preferredColor: {r: 0, g: 0, b: 0, a: 0}
+  myColorArea: 0
 --- !u!19719996 &2113883504172468142
 TilemapCollider2D:
   m_ObjectHideFlags: 1
