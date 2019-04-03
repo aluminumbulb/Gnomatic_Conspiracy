@@ -6318,7 +6318,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4675558522302794, guid: a75e9da6c1251bc43b6472c74cf915d7, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4675558522302794, guid: a75e9da6c1251bc43b6472c74cf915d7, type: 2}
       propertyPath: m_LocalRotation.x
@@ -13750,6 +13750,26 @@ Prefab:
       propertyPath: gameController
       value: 
       objectReference: {fileID: 1433976321}
+    - target: {fileID: 114010979381006010, guid: 26d084505d87d7043bb8570ff95c0b9c,
+        type: 2}
+      propertyPath: preferredColor.r
+      value: 0.99264705
+      objectReference: {fileID: 0}
+    - target: {fileID: 114010979381006010, guid: 26d084505d87d7043bb8570ff95c0b9c,
+        type: 2}
+      propertyPath: preferredColor.g
+      value: 0.88391906
+      objectReference: {fileID: 0}
+    - target: {fileID: 114010979381006010, guid: 26d084505d87d7043bb8570ff95c0b9c,
+        type: 2}
+      propertyPath: preferredColor.b
+      value: 0.007298882
+      objectReference: {fileID: 0}
+    - target: {fileID: 114010979381006010, guid: 26d084505d87d7043bb8570ff95c0b9c,
+        type: 2}
+      propertyPath: preferredColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26d084505d87d7043bb8570ff95c0b9c, type: 2}
   m_IsPrefabParent: 0
@@ -13804,7 +13824,7 @@ Prefab:
     - target: {fileID: 114749825930632590, guid: 2ec87eed77d99674b85a9b1f3ca82311,
         type: 2}
       propertyPath: wallSlideSpeedMax
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114749825930632590, guid: 2ec87eed77d99674b85a9b1f3ca82311,
         type: 2}
@@ -13825,6 +13845,11 @@ Prefab:
         type: 2}
       propertyPath: wallLeap.y
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114749825930632590, guid: 2ec87eed77d99674b85a9b1f3ca82311,
+        type: 2}
+      propertyPath: canDoubleJump
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
@@ -13905,7 +13930,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1217874983
 Prefab:
