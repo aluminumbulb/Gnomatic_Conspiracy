@@ -24,35 +24,68 @@ public class TilemapSwitchable : MonoBehaviour {
 		preferred_blue = preferredColor.b;
 	}	
 		
-
-	public void colorize(){
-		if (gameController.orbGetRed){
-			s_combined = new Color (preferred_red, 0f, 0f, 255f);
-			if (myColorArea == ColorArea.Red) {
-				solidify ();
-			}
+	private Color determineColor(){
+		if (gameController.orbGetRed) {
+			s_combined.r = preferred_red;
+		} else {
+			s_combined.r = 0f;
 		}
 
 		if (gameController.orbGetGreen) {
-			s_combined = new Color (preferred_red, preferred_green, 0f, 255f);
-			if (myColorArea == ColorArea.Green) {
-				solidify ();
-			}
+			s_combined.g = preferred_green;
+		} else {
+			s_combined.g = 0f;
 		}
 
 		if (gameController.orbGetBlue) {
-			s_combined = preferredColor;
-			if (myColorArea == ColorArea.Blue) {
+			s_combined.b = preferred_blue;
+		} else {
+			s_combined.b = 0f;
+		}
+
+		s_combined.a = 255f;
+
+		return s_combined;
+	}
+
+	public void colorize(){
+		if (myColorArea == ColorArea.Red) {
+			if (gameController.orbGetRed){
 				solidify ();
+			} else {
+				liquify ();
 			}
 		}
-			_tilemap.color = s_combined;
+			
+		if (myColorArea == ColorArea.Green) {
+			if (gameController.orbGetGreen) {
+				solidify ();
+			}else{
+				liquify ();
+			}
+		}
+
+		if (myColorArea == ColorArea.Blue) {
+			if (gameController.orbGetBlue) {
+				solidify ();
+			}else{
+				liquify ();
+			}
+		}
+		_tilemap.color = determineColor();
 
 	}
 
 	void solidify(){
 		gameObject.layer = 8;
+		transform.position = new Vector3(transform.position.x,transform.position.y,0);
 		outline.enabled = true;
+	}
+
+	void liquify(){
+		gameObject.layer = 10;
+		transform.position = new Vector3(transform.position.x,transform.position.y,10);
+		outline.enabled = false;
 	}
 
 	void Update () {

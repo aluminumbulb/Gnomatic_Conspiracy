@@ -17,7 +17,7 @@ public class Orb_Get : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void LateUpdate () {
 		RaycastHit2D surrounding = Physics2D.CircleCast(transform.position,0.65f,new Vector2(0,0));
 		if (surrounding.collider != null) {
 			gotten ();
@@ -28,9 +28,11 @@ public class Orb_Get : MonoBehaviour {
 			if(myOrbType == orbType.Red){
 				gameController.orbGetRed = true;
 			}
+
 			if (myOrbType == orbType.Green) {
 				gameController.orbGetGreen = true;
 			}
+
 			if (myOrbType == orbType.Blue) {
 				gameController.orbGetBlue = true;
 			}

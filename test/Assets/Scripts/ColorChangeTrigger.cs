@@ -29,7 +29,7 @@ public class ColorChangeTrigger : MonoBehaviour {
 		}
 
 		if (Green_Shift) {
-				gameController.orbGetGreen = true;
+			gameController.orbGetGreen = true;
 		}else{
 			gameController.orbGetGreen = false;
 		}
@@ -39,7 +39,6 @@ public class ColorChangeTrigger : MonoBehaviour {
 		} else {
 			gameController.orbGetBlue = false;
 		}
-
 			gameController.paintWorld ();
 			//Destroy (this.gameObject);
 		}

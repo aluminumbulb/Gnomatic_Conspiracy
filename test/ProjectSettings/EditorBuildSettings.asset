@@ -5,9 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/test_room.unity
     guid: 1843d65b39b50934baa2d26f76070a70
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/block_room.unity
     guid: d486bab5bfeeb0e4ab43090b3329e9fc
+  - enabled: 1
+    path: Assets/Scenes/finalstage_poc.unity
+    guid: 3d45b94c19affd84a8760b2aa30682ec
+  - enabled: 1
+    path: Assets/Scenes/Tryout_room.unity
+    guid: b2124e3e414c1453386d6c5a1b6e7266
