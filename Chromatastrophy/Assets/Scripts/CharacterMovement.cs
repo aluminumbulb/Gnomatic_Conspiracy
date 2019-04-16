@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//THIS CLASS IS NO LONGER USED, IT IS KEPT FOR POSTERITY
+
 public class CharacterMovement : MonoBehaviour {
 	bool facingLeft = true;
 	Transform player;

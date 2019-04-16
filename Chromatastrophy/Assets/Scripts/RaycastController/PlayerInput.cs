@@ -5,19 +5,16 @@ public class PlayerInput : MonoBehaviour
 {
     private Player player;
 
-	//int leftSideTouched = 0;
-	//int rightSideTouched = 0;
-	bool leftSideTouched = false;
-	bool rightSideTouched = false;
-	Rect leftSide,rightSide;
+	Touch leftTouch, rightTouch, jumpTouch;
+	Rect leftRect,rightRect, jumpRect;
 
     private void Start()
     {
         player = GetComponent<Player>();
 
-		leftSide = new  Rect(0, 0, Screen.width / 4.0f, Screen.height);
-		rightSide = new Rect(((Screen.width/4f)*3),0,Screen.width / 4.0f,Screen.height);
-
+		leftRect = new  Rect(0, 0, Screen.width / 8.0f, Screen.height);
+		rightRect = new Rect((Screen.width/8f),0, Screen.width / 4.0f,Screen.height);
+		jumpRect = 	new Rect((Screen.width*(3f/4f)),0, Screen.width / 4.0f,Screen.height);
     }
 
     private void Update()
@@ -39,37 +36,33 @@ public class PlayerInput : MonoBehaviour
     }
 
 	private void mobileControlls(){
-		if (Input.touchCount > 0) {
-			Vector2[] touchPlaces = new Vector2[Input.touches.Length];
-			for (int i = 0; i < touchPlaces.Length; i++) {
-				touchPlaces [i] = Input.touches [i].position;
+		foreach (Touch touch in Input.touches) {
+			if (leftRect.Contains (touch.position)) {
+				leftTouch = touch;
 			}
 
-			for (int j = 0; j < touchPlaces.Length; j++) {
-				if (leftSide.Contains (touchPlaces [j])) {
-					leftSideTouched = true;
-				}
-
-				if (rightSide.Contains (touchPlaces [j])) {
-					rightSideTouched = true;
-				}
+			if (rightRect.Contains (touch.position)) {
+				rightTouch = touch;
 			}
 
-			if (rightSideTouched && !leftSideTouched) {
-				player.SetDirectionalInput (Vector2.right);
-			}
-
-			if (!rightSideTouched && leftSideTouched) {
-				player.SetDirectionalInput (Vector2.left);
-			}
-
-			if (rightSideTouched && leftSideTouched) {
-				player.OnJumpInputDown();
+			if(jumpRect.Contains(touch.position)){
+				jumpTouch = touch;
 			}
 		}
-		leftSideTouched = false;
-		rightSideTouched = false;
-		
+			
+		if (jumpTouch.phase == TouchPhase.Began) {
+			player.OnJumpInputDown ();
 		}
-		//player.OnJumpInputUp();
+		if (jumpTouch.phase == TouchPhase.Ended) {
+			 player.OnJumpInputUp ();
+		}
+
+		if ((leftTouch.phase == TouchPhase.Stationary)) {
+			player.SetDirectionalInput (Vector2.left);
+		}
+		if ((rightTouch.phase == TouchPhase.Stationary)) {
+			player.SetDirectionalInput (Vector2.right);
+		}
+			
 	}
+}
