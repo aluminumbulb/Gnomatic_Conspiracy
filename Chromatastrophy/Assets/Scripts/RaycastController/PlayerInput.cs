@@ -5,6 +5,7 @@ public class PlayerInput : MonoBehaviour
 {
     private Player player;
 
+	private Collider2D playerCollider;
 	Touch leftTouch, rightTouch, jumpTouch;
 	Rect leftRect,rightRect, jumpRect;
 
@@ -13,9 +14,16 @@ public class PlayerInput : MonoBehaviour
         player = GetComponent<Player>();
 
 		leftRect = new  Rect(0, 0, Screen.width / 8.0f, Screen.height);
-		rightRect = new Rect((Screen.width/8f),0, Screen.width / 4.0f,Screen.height);
+		rightRect = new Rect((Screen.width/8f),0, Screen.width / 8.0f,Screen.height);
 		jumpRect = 	new Rect((Screen.width*(3f/4f)),0, Screen.width / 4.0f,Screen.height);
-    }
+		playerCollider = GetComponent<BoxCollider2D> ();
+
+		leftTouch.phase = TouchPhase.Ended;
+		rightTouch.phase = TouchPhase.Ended;
+		jumpTouch.phase = TouchPhase.Ended;
+    
+	
+	}
 
     private void Update()
     {
@@ -32,7 +40,7 @@ public class PlayerInput : MonoBehaviour
             player.OnJumpInputUp();
         }
 
-		mobileControlls ();
+			mobileControlls ();
     }
 
 	private void mobileControlls(){
@@ -49,10 +57,11 @@ public class PlayerInput : MonoBehaviour
 				jumpTouch = touch;
 			}
 		}
-			
+
 		if (jumpTouch.phase == TouchPhase.Began) {
 			player.OnJumpInputDown ();
 		}
+
 		if (jumpTouch.phase == TouchPhase.Ended) {
 			 player.OnJumpInputUp ();
 		}
@@ -63,6 +72,5 @@ public class PlayerInput : MonoBehaviour
 		if ((rightTouch.phase == TouchPhase.Stationary)) {
 			player.SetDirectionalInput (Vector2.right);
 		}
-			
 	}
 }

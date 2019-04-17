@@ -1,7 +1,10 @@
 fileFormatVersion: 2
 guid: e6c32143421e6d44da8ac0e872011fbf
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: arrows_0
+    21300002: arrows_1
+    21300004: arrows_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -87,7 +90,49 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: arrows_0
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 677
+        width: 227
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: arrows_1
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 511
+        width: 227
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: arrows_2
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 515
+        width: 119
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

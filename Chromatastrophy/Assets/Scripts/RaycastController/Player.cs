@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public bool canDoubleJump;
     private bool isDoubleJumping = false;
 
-    public float wallSlideSpeedMax = 3f;
+    public float wallSlideSpeedMax = 0f;
     public float wallStickTime = .25f;
     private float timeToWallUnstick;
 
@@ -33,13 +33,18 @@ public class Player : MonoBehaviour
     private bool wallSliding;
     private int wallDirX;
 
-    private void Start()
-    {
+	private Animator anim;
+	public Canvas pauseMenu;
+	private bool paused = false;
+	public void Start(){
         controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
-    }
+
+		anim = GetComponent<Animator> ();
+		pauseMenu.gameObject.SetActive (false);
+	}
 
     private void Update()
     {
@@ -53,6 +58,28 @@ public class Player : MonoBehaviour
             velocity.y = 0f;
         }
     }
+
+	public void OnMouseDown(){
+		if (paused == false) {
+			StartCoroutine (pause ());
+		}
+	}
+
+
+	IEnumerator pause(){
+		anim.SetBool ("paused", true);
+		paused = true;
+		yield return new WaitForSeconds (1);
+		pauseMenu.gameObject.SetActive (true);
+		
+	}
+
+	public void Unpause(){
+
+		anim.SetBool ("paused", false);
+		pauseMenu.gameObject.SetActive (false);
+		paused = false;
+	}
 
     public void SetDirectionalInput(Vector2 input)
     {
