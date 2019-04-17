@@ -7,12 +7,17 @@ public class Controller2D : RaycastController
     private float maxDescendAngle = 80f;
 
     public CollisionInfo collisions;
+	Animator animator;
     [HideInInspector]
     public Vector2 playerInput;
+
+	bool facingLeft = true;
 
     public override void Start()
     {
         base.Start();
+
+		animator = this.GetComponent<Animator> ();
 
         collisions.faceDir = 1;
     }
@@ -29,10 +34,14 @@ public class Controller2D : RaycastController
         collisions.moveAmountOld = moveAmount;
         playerInput = input;
 
-        if (moveAmount.x != 0)
-        {
-            collisions.faceDir = (int)Mathf.Sign(moveAmount.x);
-        }
+		if (moveAmount.x != 0) {
+			collisions.faceDir = (int)Mathf.Sign (moveAmount.x);
+
+			animator.SetBool ("Moving", true);
+		}
+		if (moveAmount.x < 0.01 && moveAmount.x > -0.01) {
+			animator.SetBool ("Moving", false);
+		}
 
         if (moveAmount.y < 0)
         {
