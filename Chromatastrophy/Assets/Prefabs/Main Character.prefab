@@ -24,7 +24,9 @@ GameObject:
   - component: {fileID: 61822471565620620}
   - component: {fileID: 114096720301276804}
   - component: {fileID: 114302873781468100}
-  - component: {fileID: 95694914375316630}
+  - component: {fileID: 82317432667646614}
+  - component: {fileID: 95655333654152870}
+  - component: {fileID: 114910615763372456}
   m_Layer: 8
   m_Name: Main Character
   m_TagString: Untagged
@@ -39,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1414483555873062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.07, y: -2.59, z: 0}
+  m_LocalPosition: {x: -0.09, y: 2.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -70,7 +72,87 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.2, y: 2.4}
   m_EdgeRadius: 0
---- !u!95 &95694914375316630
+--- !u!82 &82317432667646614
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414483555873062}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!95 &95655333654152870
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -79,7 +161,7 @@ Animator:
   m_GameObject: {fileID: 1414483555873062}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 92cac59b3556cab41b5213efe770e651, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 1
   m_ApplyRootMotion: 0
@@ -141,6 +223,27 @@ MonoBehaviour:
   wallSlideSpeedMax: 3
   wallStickTime: 0.25
   pauseMenu: {fileID: 0}
+--- !u!114 &114910615763372456
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1414483555873062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0cbeb7c8a581554e933ece392b4230f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clips:
+  - {fileID: 8300000, guid: 1748c7364f378f849a496dd93c825b5c, type: 3}
+  - {fileID: 8300000, guid: 1cba583c5f61d1442909784c9bd6db11, type: 3}
+  - {fileID: 8300000, guid: f0a4ed2ec7be428468e4c553325516e1, type: 3}
+  - {fileID: 8300000, guid: f0be5ed19b3c492448baaf4d4d0f7759, type: 3}
+  - {fileID: 8300000, guid: e99b17a068144d44bb533ffcc0db4190, type: 3}
+  - {fileID: 8300000, guid: 2420eefd12ded93488122d9eb7f7ce8e, type: 3}
+  - {fileID: 8300000, guid: 0639cfc4cce94ef489f3fef38a4bd6ab, type: 3}
+  - {fileID: 8300000, guid: 86b8e7cd68fa6e44cbc63bada7079324, type: 3}
+  - {fileID: 8300000, guid: 5be8726fc82a6ff45a17d05ccd210dc5, type: 3}
 --- !u!212 &212506123391147004
 SpriteRenderer:
   m_ObjectHideFlags: 1
