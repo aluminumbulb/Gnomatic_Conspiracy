@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /*
- * This code should be appplied to all objects not part of the tilemap.
+ * This code should be appplied to all objects not part of the tilemap.If a sprite is already colored
+ * please appy the ColorChangeProp/Obstruction Script
  */
 
-public class ForegroundSwitchableIndividual : MonoBehaviour {
+public class MonochromaticColorChange : MonoBehaviour {
 	public GameController gameController;
 	private SpriteRenderer[] sirRender;
 	private Collider2D[] _colliders;

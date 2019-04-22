@@ -39,12 +39,13 @@ public class PlayerInput : MonoBehaviour
         {
             player.OnJumpInputUp();
         }
-
-			mobileControlls ();
+		if (Input.touches.Length > 0) {
+			mobileControlls (Input.touches);
+		}
     }
 
-	private void mobileControlls(){
-		foreach (Touch touch in Input.touches) {
+	private void mobileControlls(Touch[] touches){
+		foreach (Touch touch in touches) {
 			if (leftRect.Contains (touch.position)) {
 				leftTouch = touch;
 			}
