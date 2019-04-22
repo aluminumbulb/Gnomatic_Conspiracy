@@ -11,7 +11,7 @@ public class Controller2D : RaycastController
     [HideInInspector]
     public Vector2 playerInput;
 
-	//bool facingLeft = true;
+	bool facingLeft = true;
 
     public override void Start()
     {
@@ -38,6 +38,12 @@ public class Controller2D : RaycastController
 			collisions.faceDir = (int)Mathf.Sign (moveAmount.x);
 
 			animator.SetBool ("Moving", true);
+
+			if (moveAmount.x < 0 && facingLeft == false) {
+				Flip ();
+			} else if (moveAmount.x > 0 && facingLeft == true) {
+				Flip ();
+			}
 		}
 		if (moveAmount.x < 0.01 && moveAmount.x > -0.01) {
 			animator.SetBool ("Moving", false);
@@ -236,6 +242,14 @@ public class Controller2D : RaycastController
     {
         collisions.fallingThroughPlatform = false;
     }
+
+	private void Flip() {
+		facingLeft = !facingLeft;
+
+		Vector3 theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
+	}
 
     public struct CollisionInfo
     {
