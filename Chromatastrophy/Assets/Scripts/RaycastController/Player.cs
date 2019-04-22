@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
 	private Animator anim;
 	public Canvas pauseMenu;
 	private bool paused = false;
+
 	public void Start(){
         controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);

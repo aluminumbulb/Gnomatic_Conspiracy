@@ -23,10 +23,16 @@ public class ForegroundSwitchableIndividual : MonoBehaviour {
 		preferred_green = preferredColor.g;
 		preferred_blue = preferredColor.b;
 		preferred_albedo = preferredColor.a;
+
 		foreach (Collider2D collider in _colliders) {
 			collider.enabled = false;
 		}
+
+
 		sirRender = GetComponentsInChildren<SpriteRenderer> ();
+		foreach (SpriteRenderer _sprite in sirRender) {
+			
+		}
 	}	
 
 	/*
@@ -95,6 +101,8 @@ public class ForegroundSwitchableIndividual : MonoBehaviour {
 	}
 		
 	void Update () {
-		
+		foreach (SpriteRenderer _sprite in sirRender) {
+			_sprite.color = preferredColor;
+		}
 	}
 }
