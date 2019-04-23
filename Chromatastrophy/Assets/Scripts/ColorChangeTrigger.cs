@@ -40,6 +40,6 @@ public class ColorChangeTrigger : MonoBehaviour {
 			gameController.orbGetBlue = false;
 		}
 			gameController.paintWorld ();
-			//Destroy (this.gameObject);
+			Destroy (this.gameObject);
 		}
 }

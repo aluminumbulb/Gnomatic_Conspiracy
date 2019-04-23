@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
+	public GameController _gameController;
+
     public float maxJumpHeight = 4f;
     public float minJumpHeight = 1f;
     public float timeToJumpApex = .4f;
@@ -38,13 +41,16 @@ public class Player : MonoBehaviour
 	private bool paused = false;
 
 	public void Start(){
-        controller = GetComponent<Controller2D>();
+		_gameController.lastRoomEntered = SceneManager.GetActiveScene ().name;
+			
+		controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
 		anim = GetComponent<Animator> ();
 		pauseMenu.gameObject.SetActive (false);
+
 	}
 
     private void Update()

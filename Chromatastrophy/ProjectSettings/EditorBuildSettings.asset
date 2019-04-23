@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/finalstage_poc.unity
-    guid: 3d45b94c19affd84a8760b2aa30682ec
+    guid: 1369765e6a6a82c48a64b3d505b05c98
