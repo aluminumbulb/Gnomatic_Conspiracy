@@ -13,6 +13,14 @@ public class Player : MonoBehaviour
     private float accelerationTimeGrounded = .1f;
     public float moveSpeed = 8.0f;
 
+	public float dashAmount = 3f;
+
+
+
+	public AudioClip jumpSound;
+	public AudioClip wallClingSound;
+	public AudioSource source;
+
     public Vector2 wallJumpClimb;
     public Vector2 wallJumpOff;
     public Vector2 wallLeap;
@@ -50,6 +58,8 @@ public class Player : MonoBehaviour
 
 		anim = GetComponent<Animator> ();
 		pauseMenu.gameObject.SetActive (false);
+
+		source = GetComponent<AudioSource> ();
 
 	}
 
@@ -93,24 +103,34 @@ public class Player : MonoBehaviour
         directionalInput = input;
     }
 
+	public void onDash()
+	{
+		velocity.x = dashAmount;
+	}
+
     public void OnJumpInputDown()
     {
+		
+
         if (wallSliding)
         {
             if (wallDirX == directionalInput.x)
             {
                 velocity.x = -wallDirX * wallJumpClimb.x;
                 velocity.y = wallJumpClimb.y;
+				jumpfx ();
             }
             else if (directionalInput.x == 0)
             {
                 velocity.x = -wallDirX * wallJumpOff.x;
                 velocity.y = wallJumpOff.y;
+				jumpfx ();
             }
             else
             {
                 velocity.x = -wallDirX * wallLeap.x;
                 velocity.y = wallLeap.y;
+				jumpfx ();
             }
             isDoubleJumping = false;
         }
@@ -118,13 +138,20 @@ public class Player : MonoBehaviour
         {
             velocity.y = maxJumpVelocity;
             isDoubleJumping = false;
+			jumpfx ();
         }
         if (canDoubleJump && !controller.collisions.below && !isDoubleJumping && !wallSliding)
         {
             velocity.y = maxJumpVelocity;
             isDoubleJumping = true;
+			jumpfx ();
         }
+
     }
+
+	public void jumpfx(){
+		source.PlayOneShot (jumpSound, 0.9f);	
+	}
 
     public void OnJumpInputUp()
     {
@@ -136,11 +163,16 @@ public class Player : MonoBehaviour
 
     private void HandleWallSliding()
     {
+		
         wallDirX = (controller.collisions.left) ? -1 : 1;
         wallSliding = false;
         if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0)
         {
-            wallSliding = true;
+			wallSliding = true;
+
+			//source.PlayOneShot (wallClingSound, 0.9f);	
+			
+
 
             if (velocity.y < -wallSlideSpeedMax)
             {
@@ -165,6 +197,8 @@ public class Player : MonoBehaviour
                 timeToWallUnstick = wallStickTime;
             }
         }
+
+
     }
 
     private void CalculateVelocity()
