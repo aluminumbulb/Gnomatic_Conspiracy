@@ -3,7 +3,13 @@ guid: f374ec67780aa2642a8e86f2526c05d9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audioSource: {instanceID: 0}
+  - bg1: {fileID: 8300000, guid: 2db1aab3a8cc97c438b7a166e502d7ff, type: 3}
+  - bg2: {fileID: 8300000, guid: 2d02ebb0a14047c43a33fa9f9121f0b4, type: 3}
+  - bg3: {fileID: 8300000, guid: a94d95a3666b41449b971de285fb3957, type: 3}
+  - bg4: {fileID: 8300000, guid: f009e044c34f1ac4188cae0f6d4a9403, type: 3}
+  - _player: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

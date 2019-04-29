@@ -487,10 +487,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75dc7974b0790654083a1f03edd0d340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _gameController: {fileID: 0}
   maxJumpHeight: 4
   minJumpHeight: 1
   timeToJumpApex: 0.4
   moveSpeed: 8
+  dashAmount: 3
+  jumpSound: {fileID: 8300000, guid: 52b2886ab23379f43819f0d91aa4b6d3, type: 3}
+  wallClingSound: {fileID: 8300000, guid: feae1f018b5aa004d9b49e497c9cd9a8, type: 3}
+  source: {fileID: 82317432667646614}
   wallJumpClimb: {x: 0, y: 0}
   wallJumpOff: {x: 10, y: 10}
   wallLeap: {x: 10, y: 10}
