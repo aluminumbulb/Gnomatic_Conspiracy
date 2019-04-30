@@ -58,6 +58,7 @@ public class Controller2D : RaycastController
 
         if (moveAmount.y != 0)
         {
+			animator.SetBool ("isJumping", true);
             VerticalCollisions(ref moveAmount);
         }
 
@@ -216,6 +217,7 @@ public class Controller2D : RaycastController
 
                 collisions.below = directionY == -1;
                 collisions.above = directionY == 1;
+				animator.SetBool ("isJumping", false);
             }
         }
 

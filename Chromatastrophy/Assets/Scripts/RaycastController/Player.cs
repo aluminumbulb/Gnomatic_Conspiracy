@@ -165,6 +165,7 @@ public class Player : MonoBehaviour
                 timeToWallUnstick = wallStickTime;
             }
         }
+		anim.SetBool ("isClinging", wallSliding);
     }
 
     private void CalculateVelocity()
