@@ -5,9 +5,10 @@ using UnityEngine;
 public class PauseMenuLogic : MonoBehaviour {
 	GameController _gameController;
 	Player _player;
-	// Use this for initialization
 
-	void Start () {
+	//As of now, the player must be rigged up in inspector to make resume work
+
+	void Awake () {
 		_gameController = GameObject.FindObjectOfType <GameController>();
 	}
 

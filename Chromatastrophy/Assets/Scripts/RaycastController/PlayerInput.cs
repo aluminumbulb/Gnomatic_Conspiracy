@@ -72,8 +72,17 @@ public class PlayerInput : MonoBehaviour
 		if ((leftTouch.phase == TouchPhase.Stationary)) {
 			player.SetDirectionalInput (Vector2.left);
 		}
+
+		if ((leftTouch.phase == TouchPhase.Moved)) {
+			player.onDash ();
+		}
+
 		if ((rightTouch.phase == TouchPhase.Stationary)) {
 			player.SetDirectionalInput (Vector2.right);
+		}
+
+		if ((rightTouch.phase == TouchPhase.Moved)) {
+			player.onDash ();
 		}
 	}
 }
