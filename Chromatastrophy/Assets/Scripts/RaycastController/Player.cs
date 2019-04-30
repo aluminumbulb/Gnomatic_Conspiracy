@@ -4,14 +4,22 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
-	public GameController _gameController;
-
+	private GameController _gameController;
+	public static Player player;
     public float maxJumpHeight = 4f;
     public float minJumpHeight = 1f;
     public float timeToJumpApex = .4f;
     private float accelerationTimeAirborne = .2f;
     private float accelerationTimeGrounded = .1f;
     public float moveSpeed = 8.0f;
+
+	public float dashAmount = 3f;
+
+
+
+	public AudioClip jumpSound;
+	public AudioClip wallClingSound;
+	public AudioSource source;
 
     public Vector2 wallJumpClimb;
     public Vector2 wallJumpOff;
@@ -40,16 +48,27 @@ public class Player : MonoBehaviour
 	public Canvas pauseMenu;
 	private bool paused = false;
 
+	public void Awake(){
+		if (player == null) {
+			player = this;
+		} else if (controller != null) {
+			Destroy (this);
+		}
+	}
+
 	public void Start(){
+		_gameController = GameObject.FindObjectOfType<GameController> ();
 		_gameController.lastRoomEntered = SceneManager.GetActiveScene ().name;
-			
+
 		controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
 		anim = GetComponent<Animator> ();
-		pauseMenu.gameObject.SetActive (false);
+		pauseMenu.GetComponent<Canvas> ().enabled = false;
+
+		source = GetComponent<AudioSource> ();
 
 	}
 
@@ -64,6 +83,11 @@ public class Player : MonoBehaviour
         {
             velocity.y = 0f;
         }
+
+		if(Input.GetKey(KeyCode.Q)){
+			//Unpause();
+			//Debug.Log(anim.GetBool("paused"));	
+		}
     }
 
 	public void OnMouseDown(){
@@ -74,18 +98,17 @@ public class Player : MonoBehaviour
 
 
 	IEnumerator pause(){
-		anim.SetBool ("paused", true);
+		anim.SetBool ("paused",true);
 		paused = true;
 		yield return new WaitForSeconds (1);
-		pauseMenu.gameObject.SetActive (true);
-		
+		pauseMenu.GetComponent<Canvas> ().enabled = true;
 	}
 
 	public void Unpause(){
-
 		anim.SetBool ("paused", false);
-		pauseMenu.gameObject.SetActive (false);
 		paused = false;
+		pauseMenu.GetComponent<Canvas> ().enabled = false;
+
 	}
 
     public void SetDirectionalInput(Vector2 input)
@@ -93,24 +116,34 @@ public class Player : MonoBehaviour
         directionalInput = input;
     }
 
+	public void onDash()
+	{
+		velocity.x = dashAmount;
+	}
+
     public void OnJumpInputDown()
     {
+		
+
         if (wallSliding)
         {
             if (wallDirX == directionalInput.x)
             {
                 velocity.x = -wallDirX * wallJumpClimb.x;
                 velocity.y = wallJumpClimb.y;
+				jumpfx ();
             }
             else if (directionalInput.x == 0)
             {
                 velocity.x = -wallDirX * wallJumpOff.x;
                 velocity.y = wallJumpOff.y;
+				jumpfx ();
             }
             else
             {
                 velocity.x = -wallDirX * wallLeap.x;
                 velocity.y = wallLeap.y;
+				jumpfx ();
             }
             isDoubleJumping = false;
         }
@@ -118,13 +151,20 @@ public class Player : MonoBehaviour
         {
             velocity.y = maxJumpVelocity;
             isDoubleJumping = false;
+			jumpfx ();
         }
         if (canDoubleJump && !controller.collisions.below && !isDoubleJumping && !wallSliding)
         {
             velocity.y = maxJumpVelocity;
             isDoubleJumping = true;
+			jumpfx ();
         }
+
     }
+
+	public void jumpfx(){
+		source.PlayOneShot (jumpSound, 0.9f);	
+	}
 
     public void OnJumpInputUp()
     {
@@ -136,11 +176,16 @@ public class Player : MonoBehaviour
 
     private void HandleWallSliding()
     {
+		
         wallDirX = (controller.collisions.left) ? -1 : 1;
         wallSliding = false;
         if ((controller.collisions.left || controller.collisions.right) && !controller.collisions.below && velocity.y < 0)
         {
-            wallSliding = true;
+			wallSliding = true;
+
+			//source.PlayOneShot (wallClingSound, 0.9f);	
+			
+
 
             if (velocity.y < -wallSlideSpeedMax)
             {
@@ -166,6 +211,7 @@ public class Player : MonoBehaviour
             }
         }
 		anim.SetBool ("isClinging", wallSliding);
+
     }
 
     private void CalculateVelocity()

@@ -45,6 +45,7 @@ public class Controller2D : RaycastController
 				Flip ();
 			}
 		}
+
 		if (moveAmount.x < 0.01 && moveAmount.x > -0.01) {
 			animator.SetBool ("Moving", false);
 		}

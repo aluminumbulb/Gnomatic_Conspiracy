@@ -15,10 +15,16 @@ public class TilemapSwitchable : MonoBehaviour {
 	public ColorArea myColorArea;
 	private Color s_combined;
 
-	void Start (){
+	void Awake(){
+		gameController = FindObjectOfType<GameController> ();
 		outline = GetComponent<TilemapCollider2D> ();
 		outline.enabled = false;
 		_tilemap = GetComponent<Tilemap> ();
+	}
+
+	void Start (){
+
+
 		preferred_red = preferredColor.r;
 		preferred_green = preferredColor.g;
 		preferred_blue = preferredColor.b;
