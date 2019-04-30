@@ -21,8 +21,6 @@ public class PlayerInput : MonoBehaviour
 		leftTouch.phase = TouchPhase.Ended;
 		rightTouch.phase = TouchPhase.Ended;
 		jumpTouch.phase = TouchPhase.Ended;
-    
-	
 	}
 
     private void Update()

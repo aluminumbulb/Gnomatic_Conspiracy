@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
-	public GameController _gameController;
-
+	private GameController _gameController;
+	public static Player player;
     public float maxJumpHeight = 4f;
     public float minJumpHeight = 1f;
     public float timeToJumpApex = .4f;
@@ -48,16 +48,25 @@ public class Player : MonoBehaviour
 	public Canvas pauseMenu;
 	private bool paused = false;
 
+	public void Awake(){
+		if (player == null) {
+			player = this;
+		} else if (controller != null) {
+			Destroy (this);
+		}
+	}
+
 	public void Start(){
+		_gameController = GameObject.FindObjectOfType<GameController> ();
 		_gameController.lastRoomEntered = SceneManager.GetActiveScene ().name;
-			
+
 		controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);
         maxJumpVelocity = Mathf.Abs(gravity) * timeToJumpApex;
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
 		anim = GetComponent<Animator> ();
-		pauseMenu.gameObject.SetActive (false);
+		pauseMenu.GetComponent<Canvas> ().enabled = false;
 
 		source = GetComponent<AudioSource> ();
 
@@ -75,6 +84,11 @@ public class Player : MonoBehaviour
             velocity.y = 0f;
 			hasDashed = false;
         }
+
+		if(Input.GetKey(KeyCode.Q)){
+			//Unpause();
+			//Debug.Log(anim.GetBool("paused"));	
+		}
     }
 
 	public void OnMouseDown(){
@@ -85,18 +99,17 @@ public class Player : MonoBehaviour
 
 
 	IEnumerator pause(){
-		anim.SetBool ("paused", true);
+		anim.SetBool ("paused",true);
 		paused = true;
 		yield return new WaitForSeconds (1);
-		pauseMenu.gameObject.SetActive (true);
-		
+		pauseMenu.GetComponent<Canvas> ().enabled = true;
 	}
 
 	public void Unpause(){
-
 		anim.SetBool ("paused", false);
-		pauseMenu.gameObject.SetActive (false);
 		paused = false;
+		pauseMenu.GetComponent<Canvas> ().enabled = false;
+
 	}
 
     public void SetDirectionalInput(Vector2 input)
@@ -205,7 +218,7 @@ public class Player : MonoBehaviour
                 timeToWallUnstick = wallStickTime;
             }
         }
-
+		anim.SetBool ("isClinging", wallSliding);
 
     }
 
