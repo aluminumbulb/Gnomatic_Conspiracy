@@ -13,8 +13,8 @@ public class Player : MonoBehaviour
     private float accelerationTimeGrounded = .1f;
     public float moveSpeed = 8.0f;
 
-	public float dashAmount = 3f;
-
+	public float dashAmount = -30f;
+	private bool hasDashed = false;
 
 
 	public AudioClip jumpSound;
@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
         if (controller.collisions.above || controller.collisions.below)
         {
             velocity.y = 0f;
+			hasDashed = false;
         }
     }
 
@@ -105,7 +106,14 @@ public class Player : MonoBehaviour
 
 	public void onDash()
 	{
-		velocity.x = dashAmount;
+		if (hasDashed)
+			return;
+		if (!controller.facingLeft) {
+			velocity.x = dashAmount * minJumpVelocity;
+		} else {
+			velocity.x = -dashAmount * minJumpVelocity;
+		}
+		hasDashed = true;
 	}
 
     public void OnJumpInputDown()
