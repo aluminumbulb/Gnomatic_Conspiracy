@@ -13,8 +13,11 @@ public class Player : MonoBehaviour
     private float accelerationTimeGrounded = .1f;
     public float moveSpeed = 8.0f;
 
-	public float dashAmount = -30f;
+	public float dashAmount = -14f;
 	private bool hasDashed = false;
+	public float dashCooldown = 0.9f;
+	private float timeStamp = 0f;
+	private int dashCounter = 0;
 
 
 	public AudioClip jumpSound;
@@ -84,12 +87,20 @@ public class Player : MonoBehaviour
         if (controller.collisions.above || controller.collisions.below)
         {
             velocity.y = 0f;
-			hasDashed = false;
         }
 
 		if(Input.GetKey(KeyCode.Q)){
 			//Unpause();
 			//Debug.Log(anim.GetBool("paused"));	
+		}
+
+		if (hasDashed) {
+			velocity.y = 0f;
+			dashCounter++;
+			if (dashCounter > 8) {
+				hasDashed = false;
+				dashCounter = 0;
+			}
 		}
     }
 
@@ -121,8 +132,11 @@ public class Player : MonoBehaviour
 
 	public void onDash()
 	{
-		if (hasDashed)
+		if (Time.time <= timeStamp)
 			return;
+		if (timeStamp < Time.time)
+			timeStamp = Time.time + dashCooldown;
+		
 		if (!controller.facingLeft) {
 			velocity.x = dashAmount * minJumpVelocity;
 		} else {
