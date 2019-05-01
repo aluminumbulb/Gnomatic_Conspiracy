@@ -8,12 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/finalstage_poc.unity
-    guid: 1369765e6a6a82c48a64b3d505b05c98
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 0
     path: Assets/Scenes/Tryout_room.unity
     guid: b2124e3e414c1453386d6c5a1b6e7266
+  - enabled: 1
+    path: Assets/Scenes/title_screen.unity
+    guid: f5876f568f2f0db468a6c620156c3f0f
   - enabled: 1
     path: Assets/Scenes/Changing_Room.unity
     guid: 852f534493675cd43aaac21173c259d1

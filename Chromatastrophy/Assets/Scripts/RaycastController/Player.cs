@@ -54,11 +54,13 @@ public class Player : MonoBehaviour
 		} else if (controller != null) {
 			Destroy (this);
 		}
+
 	}
 
 	public void Start(){
 		_gameController = GameObject.FindObjectOfType<GameController> ();
 		_gameController.lastRoomEntered = SceneManager.GetActiveScene ().name;
+		_gameController.paintWorld ();
 
 		controller = GetComponent<Controller2D>();
         gravity = -(2 * maxJumpHeight) / Mathf.Pow(timeToJumpApex, 2);

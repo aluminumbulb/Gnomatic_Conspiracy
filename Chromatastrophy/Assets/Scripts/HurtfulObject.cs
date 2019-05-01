@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HurtfulObject : MonoBehaviour {
 
+	public float damageRadius;
 	public Vector3 destination;
 
 	// Use this for initialization
@@ -14,7 +15,7 @@ public class HurtfulObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector2 ray = transform.position;
-		RaycastHit2D hit = Physics2D.CircleCast (transform.position, 1.0f, transform.up);
+		RaycastHit2D hit = Physics2D.CircleCast (transform.position, damageRadius, transform.up);
 		if (hit) {
 			GameObject hitObject = hit.transform.gameObject;
 			if (hitObject.GetComponent<Player> ()) {
