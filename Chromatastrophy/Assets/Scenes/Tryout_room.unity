@@ -119,9 +119,14 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1197475837}
   m_Script: {fileID: 11500000, guid: f374ec67780aa2642a8e86f2526c05d9, type: 3}
---- !u!114 &572401229 stripped
+--- !u!4 &959610778 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4259411922091828, guid: 2ec87eed77d99674b85a9b1f3ca82311,
+    type: 2}
+  m_PrefabInternal: {fileID: 1105159059}
+--- !u!114 &959610779 stripped
 MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114749825930632590, guid: 2ec87eed77d99674b85a9b1f3ca82311,
+  m_PrefabParentObject: {fileID: 114336064968017190, guid: 2ec87eed77d99674b85a9b1f3ca82311,
     type: 2}
   m_PrefabInternal: {fileID: 1105159059}
   m_Script: {fileID: 11500000, guid: 75dc7974b0790654083a1f03edd0d340, type: 3}
@@ -179,6 +184,23 @@ Prefab:
       propertyPath: _gameController
       value: 
       objectReference: {fileID: 409703597}
+    - target: {fileID: 4259411922091828, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259411922091828, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4259411922091828, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114939334942648458, guid: 2ec87eed77d99674b85a9b1f3ca82311,
+        type: 2}
+      propertyPath: collisionMask.m_Bits
+      value: 257
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
   m_IsPrefabParent: 0
@@ -291,21 +313,21 @@ Prefab:
         type: 2}
       propertyPath: _player
       value: 
-      objectReference: {fileID: 572401229}
+      objectReference: {fileID: 959610779}
     - target: {fileID: 114361432261596876, guid: 6fa5ed74e1fbb8c4cb90d3a82d32a66b,
         type: 2}
       propertyPath: orbGetRed
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114361432261596876, guid: 6fa5ed74e1fbb8c4cb90d3a82d32a66b,
         type: 2}
       propertyPath: orbGetGreen
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114361432261596876, guid: 6fa5ed74e1fbb8c4cb90d3a82d32a66b,
         type: 2}
       propertyPath: orbGetBlue
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 82151504075502284, guid: 6fa5ed74e1fbb8c4cb90d3a82d32a66b, type: 2}
@@ -648,7 +670,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4675558522302794, guid: a75e9da6c1251bc43b6472c74cf915d7, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8195094281377882018, guid: a75e9da6c1251bc43b6472c74cf915d7,
         type: 2}
@@ -30587,11 +30609,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a75e9da6c1251bc43b6472c74cf915d7, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1724367788 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4722625442324412, guid: 2ec87eed77d99674b85a9b1f3ca82311,
-    type: 2}
-  m_PrefabInternal: {fileID: 1105159059}
 --- !u!1 &1900756191
 GameObject:
   m_ObjectHideFlags: 3
@@ -30680,11 +30697,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4639134685688546, guid: 6b8c701c59ce24acb9f26e1183953c86, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.09
+      value: 2.39
       objectReference: {fileID: 0}
     - target: {fileID: 4639134685688546, guid: 6b8c701c59ce24acb9f26e1183953c86, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.9199991
+      value: 5.399999
       objectReference: {fileID: 0}
     - target: {fileID: 4639134685688546, guid: 6b8c701c59ce24acb9f26e1183953c86, type: 2}
       propertyPath: m_LocalPosition.z
@@ -30746,7 +30763,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 5
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 1724367788}
+  m_Follow: {fileID: 959610778}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 5
@@ -30761,7 +30778,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2004269736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.09, y: 2.9199991, z: -10}
+  m_LocalPosition: {x: 2.39, y: 5.399999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1900756192}
