@@ -625,7 +625,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4880675464975328, guid: fe2a5901c8c69c241a9cb7db041b56ed, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.66
+      value: -6.96
       objectReference: {fileID: 0}
     - target: {fileID: 4880675464975328, guid: fe2a5901c8c69c241a9cb7db041b56ed, type: 2}
       propertyPath: m_LocalPosition.z
@@ -634,7 +634,7 @@ Prefab:
     - target: {fileID: 114224625532907894, guid: fe2a5901c8c69c241a9cb7db041b56ed,
         type: 2}
       propertyPath: m_XDamping
-      value: 0.8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114224625532907894, guid: fe2a5901c8c69c241a9cb7db041b56ed,
         type: 2}
@@ -644,7 +644,7 @@ Prefab:
     - target: {fileID: 114224625532907894, guid: fe2a5901c8c69c241a9cb7db041b56ed,
         type: 2}
       propertyPath: m_FollowOffset.y
-      value: 0.84
+      value: -0.46
       objectReference: {fileID: 0}
     - target: {fileID: 114384435259545384, guid: fe2a5901c8c69c241a9cb7db041b56ed,
         type: 2}
@@ -670,6 +670,16 @@ Prefab:
         type: 2}
       propertyPath: m_Lens.FarClipPlane
       value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114224625532907894, guid: fe2a5901c8c69c241a9cb7db041b56ed,
+        type: 2}
+      propertyPath: m_YDamping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114224625532907894, guid: fe2a5901c8c69c241a9cb7db041b56ed,
+        type: 2}
+      propertyPath: m_ZDamping
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe2a5901c8c69c241a9cb7db041b56ed, type: 2}
@@ -889,6 +899,10 @@ Prefab:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1002972550}
+    - target: {fileID: 1414483555873062, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
   m_IsPrefabParent: 0
@@ -957,7 +971,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4770384640886450, guid: ea545c1930eff28488ee8a32b1606e85, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.66
+      value: -6.96
       objectReference: {fileID: 0}
     - target: {fileID: 4770384640886450, guid: ea545c1930eff28488ee8a32b1606e85, type: 2}
       propertyPath: m_LocalPosition.z
@@ -982,6 +996,21 @@ Prefab:
     - target: {fileID: 4770384640886450, guid: ea545c1930eff28488ee8a32b1606e85, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 20964954405767008, guid: ea545c1930eff28488ee8a32b1606e85,
+        type: 2}
+      propertyPath: near clip plane
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 20964954405767008, guid: ea545c1930eff28488ee8a32b1606e85,
+        type: 2}
+      propertyPath: field of view
+      value: 44.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 20964954405767008, guid: ea545c1930eff28488ee8a32b1606e85,
+        type: 2}
+      propertyPath: orthographic size
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ea545c1930eff28488ee8a32b1606e85, type: 2}

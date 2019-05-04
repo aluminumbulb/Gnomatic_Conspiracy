@@ -54,12 +54,15 @@ public class Player : MonoBehaviour
 		} else if (controller != null) {
 			Destroy (this);
 		}
-
 	}
 
 	public void Start(){
 		_gameController = GameObject.FindObjectOfType<GameController> ();
 		_gameController.lastRoomEntered = SceneManager.GetActiveScene ().name;
+		if(SceneManager.GetActiveScene ().name == _gameController.lastRoomEntered){
+			transform.position = _gameController.lastSavedLocation;
+		}
+
 		_gameController.paintWorld ();
 
 		controller = GetComponent<Controller2D>();
