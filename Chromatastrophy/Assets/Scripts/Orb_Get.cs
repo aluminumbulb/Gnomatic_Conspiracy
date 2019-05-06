@@ -5,6 +5,7 @@ using UnityEngine;
 public class Orb_Get : MonoBehaviour {
 	private CircleCollider2D orb;
 	public GameController gameController;
+	public GameObject spikeToAppear;
 
 	public enum orbType{Red, Green, Blue};
 	public orbType myOrbType;
@@ -36,6 +37,8 @@ public class Orb_Get : MonoBehaviour {
 			if (myOrbType == orbType.Blue) {
 				gameController.orbGetBlue = true;
 			}
+
+			spikeToAppear.SetActive (true);
 
 			gameController.paintWorld ();
 			Destroy (this.gameObject);
