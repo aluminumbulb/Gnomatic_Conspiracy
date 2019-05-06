@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
 
     public bool canDoubleJump;
     private bool isDoubleJumping = false;
+	public bool canWallSlide;
 
     public float wallSlideSpeedMax = 0f;
     public float wallStickTime = .25f;
@@ -77,7 +78,9 @@ public class Player : MonoBehaviour
     private void Update()
     {
         CalculateVelocity();
-        HandleWallSliding();
+		if (canWallSlide) {
+			HandleWallSliding ();
+		}
 
         controller.Move(velocity * Time.deltaTime, directionalInput);
 
