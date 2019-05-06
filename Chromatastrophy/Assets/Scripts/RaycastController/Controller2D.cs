@@ -12,6 +12,7 @@ public class Controller2D : RaycastController
     public Vector2 playerInput;
 
 	public bool facingLeft = true;
+	public bool isWallSliding = false;
 
     public override void Start()
     {
@@ -246,7 +247,15 @@ public class Controller2D : RaycastController
         collisions.fallingThroughPlatform = false;
     }
 
-	private void Flip() {
+	public void wallSlide(bool wallLeft) {
+		if (wallLeft == true && facingLeft == true) {
+			Flip ();
+		} else if (wallLeft == false && facingLeft == false) {
+			Flip ();
+		}
+	}
+
+	public void Flip() {
 		facingLeft = !facingLeft;
 
 		Vector3 theScale = transform.localScale;

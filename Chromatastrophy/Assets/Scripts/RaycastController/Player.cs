@@ -210,8 +210,13 @@ public class Player : MonoBehaviour
         {
 			wallSliding = true;
 
-			//source.PlayOneShot (wallClingSound, 0.9f);	
-			
+			//source.PlayOneShot (wallClingSound, 0.9f);
+
+			if (wallDirX == -1) {
+				controller.wallSlide (true);
+			} else {
+				controller.wallSlide (false);
+			}
 
 
             if (velocity.y < -wallSlideSpeedMax)
