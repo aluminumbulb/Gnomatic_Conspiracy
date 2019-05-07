@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+     ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Controller2D))]
@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
 
     public bool canDoubleJump;
     private bool isDoubleJumping = false;
+	public bool canWallSlide;
 
     public float wallSlideSpeedMax = 0f;
     public float wallStickTime = .25f;
@@ -57,15 +58,12 @@ public class Player : MonoBehaviour
 		} else if (controller != null) {
 			Destroy (this);
 		}
+
 	}
 
 	public void Start(){
 		_gameController = GameObject.FindObjectOfType<GameController> ();
 		_gameController.lastRoomEntered = SceneManager.GetActiveScene ().name;
-		//if(SceneManager.GetActiveScene ().name == _gameController.lastRoomEntered){
-		//	transform.position = _gameController.lastSavedLocation;
-		//}
-
 		_gameController.paintWorld ();
 
 		controller = GetComponent<Controller2D>();
@@ -83,7 +81,9 @@ public class Player : MonoBehaviour
     private void Update()
     {
         CalculateVelocity();
-        HandleWallSliding();
+		if (canWallSlide) {
+			HandleWallSliding ();
+		}
 
         controller.Move(velocity * Time.deltaTime, directionalInput);
 
@@ -210,8 +210,13 @@ public class Player : MonoBehaviour
         {
 			wallSliding = true;
 
-			//source.PlayOneShot (wallClingSound, 0.9f);	
-			
+			//source.PlayOneShot (wallClingSound, 0.9f);
+
+			if (wallDirX == -1) {
+				controller.wallSlide (true);
+			} else {
+				controller.wallSlide (false);
+			}
 
 
             if (velocity.y < -wallSlideSpeedMax)
