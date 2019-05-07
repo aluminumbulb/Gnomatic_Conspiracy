@@ -62,9 +62,9 @@ public class Player : MonoBehaviour
 	public void Start(){
 		_gameController = GameObject.FindObjectOfType<GameController> ();
 		_gameController.lastRoomEntered = SceneManager.GetActiveScene ().name;
-		if(SceneManager.GetActiveScene ().name == _gameController.lastRoomEntered){
-			transform.position = _gameController.lastSavedLocation;
-		}
+		//if(SceneManager.GetActiveScene ().name == _gameController.lastRoomEntered){
+		//	transform.position = _gameController.lastSavedLocation;
+		//}
 
 		_gameController.paintWorld ();
 

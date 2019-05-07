@@ -171,6 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageRadius: 0
   destination: {x: -8.64, y: -5.37, z: 0}
 --- !u!1001 &38516051
 Prefab:
@@ -255,6 +256,10 @@ Prefab:
       propertyPath: _gameController
       value: 
       objectReference: {fileID: 1922713124}
+    - target: {fileID: 1414483555873062, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
   m_IsPrefabParent: 0
@@ -12745,11 +12750,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!61 &171264081 stripped
-BoxCollider2D:
-  m_PrefabParentObject: {fileID: 61822471565620620, guid: 2ec87eed77d99674b85a9b1f3ca82311,
-    type: 2}
-  m_PrefabInternal: {fileID: 38516051}
 --- !u!114 &171264083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12768,9 +12768,9 @@ MonoBehaviour:
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 0
-  m_GroundCheck: {fileID: 1675529748}
-  m_CeilingCheck: {fileID: 1675529748}
-  m_CrouchDisableCollider: {fileID: 171264081}
+  m_GroundCheck: {fileID: 0}
+  m_CeilingCheck: {fileID: 0}
+  m_CrouchDisableCollider: {fileID: 0}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -13425,7 +13425,7 @@ MonoBehaviour:
   m_LockStageInInspector: 
   m_StreamingVersion: 20170927
   m_Priority: 10
-  m_LookAt: {fileID: 1675529748}
+  m_LookAt: {fileID: 0}
   m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
@@ -14022,7 +14022,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 972524839}
+      - m_Target: {fileID: 0}
         m_MethodName: Unpause
         m_Mode: 1
         m_Arguments:
@@ -14320,7 +14320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51afb638d7ebf9149bd4e3359d87a1d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Tryout_room
+  levelName: Changing_Room
 --- !u!4 &707437468
 Transform:
   m_ObjectHideFlags: 0
@@ -14328,7 +14328,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 707437466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.05, y: -7.14, z: -0.08338616}
+  m_LocalPosition: {x: 34.7, y: -7.14, z: -0.08338616}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14541,12 +14541,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!114 &972524839 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114749825930632590, guid: 2ec87eed77d99674b85a9b1f3ca82311,
-    type: 2}
-  m_PrefabInternal: {fileID: 38516051}
-  m_Script: {fileID: 11500000, guid: 75dc7974b0790654083a1f03edd0d340, type: 3}
 --- !u!4 &1191563169 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4043286405280176, guid: 273fa95bf965ba546925c2410eba0dde,
@@ -14941,7 +14935,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1432606981
 MonoBehaviour:
@@ -19038,11 +19032,6 @@ Transform:
   m_PrefabParentObject: {fileID: 4043286405280176, guid: 273fa95bf965ba546925c2410eba0dde,
     type: 2}
   m_PrefabInternal: {fileID: 1530953677}
---- !u!4 &1675529748 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4722625442324412, guid: 2ec87eed77d99674b85a9b1f3ca82311,
-    type: 2}
-  m_PrefabInternal: {fileID: 38516051}
 --- !u!1001 &1706991938
 Prefab:
   m_ObjectHideFlags: 0
@@ -19303,7 +19292,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 1675529748}
+  m_Follow: {fileID: 0}
   m_AnimatedTarget: {fileID: 171264080}
   m_LayerIndex: 0
   m_ShowDebugText: 0
@@ -19447,7 +19436,7 @@ MonoBehaviour:
   m_StreamingVersion: 20170927
   m_Priority: 10
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 1675529748}
+  m_Follow: {fileID: 0}
   m_Lens:
     FieldOfView: 40
     OrthographicSize: 5
@@ -20058,7 +20047,7 @@ Prefab:
         type: 2}
       propertyPath: _player
       value: 
-      objectReference: {fileID: 972524839}
+      objectReference: {fileID: 0}
     - target: {fileID: 114361432261596876, guid: 6fa5ed74e1fbb8c4cb90d3a82d32a66b,
         type: 2}
       propertyPath: audioSource
