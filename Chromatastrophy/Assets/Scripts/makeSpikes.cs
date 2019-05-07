@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class makeSpikes : MonoBehaviour {
 
-	public GameController _gameController;
+	// public GameController _gameController;
 
 	// Use this for initialization
 	void Start () {
