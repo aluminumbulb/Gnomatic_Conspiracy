@@ -13,8 +13,7 @@ public class Orb_Get : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () { 
-		//orb = GetComponent<CircleCollider2D> ();
-		//myOrbType = orbType.Red;
+		gameController = GameObject.FindObjectOfType<GameController> ();
 	}
 	
 	// Update is called once per frame
