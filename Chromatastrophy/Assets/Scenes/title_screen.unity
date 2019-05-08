@@ -2233,6 +2233,48 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &1133845701
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4191622613580604, guid: 4a2b5e69bfcaac94a88ce98ff13bc8db, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191622613580604, guid: 4a2b5e69bfcaac94a88ce98ff13bc8db, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191622613580604, guid: 4a2b5e69bfcaac94a88ce98ff13bc8db, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191622613580604, guid: 4a2b5e69bfcaac94a88ce98ff13bc8db, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191622613580604, guid: 4a2b5e69bfcaac94a88ce98ff13bc8db, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191622613580604, guid: 4a2b5e69bfcaac94a88ce98ff13bc8db, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191622613580604, guid: 4a2b5e69bfcaac94a88ce98ff13bc8db, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4191622613580604, guid: 4a2b5e69bfcaac94a88ce98ff13bc8db, type: 2}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4a2b5e69bfcaac94a88ce98ff13bc8db, type: 2}
+  m_IsPrefabParent: 0
 --- !u!223 &1179543169 stripped
 Canvas:
   m_PrefabParentObject: {fileID: 223201608538934326, guid: 26c98142f3d37e04d9f615be8dea3352,
@@ -2466,6 +2508,11 @@ Prefab:
     - target: {fileID: 4241145578244912, guid: 5b2676b1a814df745abdd39b561a7956, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 114401041475502578, guid: 5b2676b1a814df745abdd39b561a7956,
+        type: 2}
+      propertyPath: levelName
+      value: Hub Scene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b2676b1a814df745abdd39b561a7956, type: 2}
@@ -3016,6 +3063,11 @@ Prefab:
       propertyPath: spreadCustomCurve.m_RotationOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114361432261596876, guid: 6fa5ed74e1fbb8c4cb90d3a82d32a66b,
+        type: 2}
+      propertyPath: orbGetBlue
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6fa5ed74e1fbb8c4cb90d3a82d32a66b, type: 2}
   m_IsPrefabParent: 0
@@ -3213,6 +3265,11 @@ Prefab:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1179543169}
+    - target: {fileID: 114839061268848726, guid: 2ec87eed77d99674b85a9b1f3ca82311,
+        type: 2}
+      propertyPath: dashSensitivity
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
   m_IsPrefabParent: 0
