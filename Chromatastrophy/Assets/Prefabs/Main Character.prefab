@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 114491475946591586}
   m_Layer: 9
   m_Name: Main Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -207,13 +207,16 @@ MonoBehaviour:
   timeToJumpApex: 0.4
   moveSpeed: 8
   dashAmount: 3
+  dashCooldown: 0.9
   jumpSound: {fileID: 8300000, guid: 52b2886ab23379f43819f0d91aa4b6d3, type: 3}
   wallClingSound: {fileID: 8300000, guid: feae1f018b5aa004d9b49e497c9cd9a8, type: 3}
-  source: {fileID: 0}
+  source: {fileID: 82098206244027280}
   wallJumpClimb: {x: 0, y: 0}
   wallJumpOff: {x: 10, y: 10}
   wallLeap: {x: 10, y: 10}
   canDoubleJump: 1
+  canWallSlide: 0
+  canDash: 0
   wallSlideSpeedMax: 3
   wallStickTime: 0.25
   pauseMenu: {fileID: 0}
@@ -281,6 +284,7 @@ MonoBehaviour:
   fallingThroughPlatformResetTimer: 0.1
   playerInput: {x: 0, y: 0}
   facingLeft: 1
+  isWallSliding: 0
 --- !u!212 &212852627548289812
 SpriteRenderer:
   m_ObjectHideFlags: 1

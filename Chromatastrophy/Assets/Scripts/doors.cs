@@ -15,13 +15,13 @@ public class doors : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		RaycastHit2D doorFrame = Physics2D.BoxCast (new Vector2(transform.position.x, transform.position.y), new Vector2 (2f, 4f), 0, Vector2.zero);
+		RaycastHit2D doorFrame = Physics2D.BoxCast (new Vector2(transform.position.x, transform.position.y), new Vector2 (1f, 2f), 0, Vector2.zero);
 		if (doorFrame.collider != null) {
 			if (doorFrame.collider.tag == "Player") {
 				_spriteRenderer.sprite = openDoor; 
-				if (Input.GetKeyDown(KeyCode.E)) {
+				//if (Input.GetKeyDown(KeyCode.E)) {
 					SceneManager.LoadScene (levelName, LoadSceneMode.Single);
-				}
+				//}
 			}
 		}else if (_spriteRenderer.sprite != closedDoor) {
 			_spriteRenderer.sprite = closedDoor;

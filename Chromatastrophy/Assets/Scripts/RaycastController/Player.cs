@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+     ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Controller2D))]
 public class Player : MonoBehaviour
 {
 	private GameController _gameController;
+
 	public static Player player;
     public float maxJumpHeight = 4f;
     public float minJumpHeight = 1f;
@@ -19,7 +20,6 @@ public class Player : MonoBehaviour
 	private float timeStamp = 0f;
 	private int dashCounter = 0;
 
-
 	public AudioClip jumpSound;
 	public AudioClip wallClingSound;
 	public AudioSource source;
@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     public bool canDoubleJump;
     private bool isDoubleJumping = false;
 	public bool canWallSlide;
+	public bool canDash;
 
     public float wallSlideSpeedMax = 0f;
     public float wallStickTime = .25f;
@@ -55,7 +56,7 @@ public class Player : MonoBehaviour
 	public void Awake(){
 		if (player == null) {
 			player = this;
-		} else if (controller != null) {
+		} else if (player != null) {
 			Destroy (this);
 		}
 
@@ -63,7 +64,10 @@ public class Player : MonoBehaviour
 
 	public void Start(){
 		_gameController = GameObject.FindObjectOfType<GameController> ();
-		_gameController.lastRoomEntered = SceneManager.GetActiveScene ().name;
+		if (_gameController.lastRoomSaved == SceneManager.GetActiveScene ().name) {
+			transform.position = _gameController.lastSavedLocation;
+		}
+			
 		_gameController.paintWorld ();
 
 		controller = GetComponent<Controller2D>();
@@ -72,7 +76,7 @@ public class Player : MonoBehaviour
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
 		anim = GetComponent<Animator> ();
-		pauseMenu.GetComponent<Canvas> ().enabled = false;
+		//pauseMenu.GetComponent<Canvas> ().enabled = false;
 
 		source = GetComponent<AudioSource> ();
 
@@ -80,7 +84,8 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        CalculateVelocity();
+		CalculateVelocity();
+
 		if (canWallSlide) {
 			HandleWallSliding ();
 		}
@@ -92,12 +97,8 @@ public class Player : MonoBehaviour
             velocity.y = 0f;
         }
 
-		if(Input.GetKey(KeyCode.Q)){
-			//Unpause();
-			//Debug.Log(anim.GetBool("paused"));	
-		}
 
-		if (hasDashed) {
+		if (canDash && hasDashed) {
 			velocity.y = 0f;
 			dashCounter++;
 			if (dashCounter > 8) {
@@ -105,6 +106,8 @@ public class Player : MonoBehaviour
 				dashCounter = 0;
 			}
 		}
+
+
     }
 
 	public void OnMouseDown(){
@@ -135,17 +138,20 @@ public class Player : MonoBehaviour
 
 	public void onDash()
 	{
-		if (Time.time <= timeStamp)
-			return;
-		if (timeStamp < Time.time)
-			timeStamp = Time.time + dashCooldown;
+		//Added for easy toggleability, sorry - A
+		if (canDash) {
+			if (Time.time <= timeStamp)
+				return;
+			if (timeStamp < Time.time)
+				timeStamp = Time.time + dashCooldown;
 		
-		if (!controller.facingLeft) {
-			velocity.x = dashAmount * minJumpVelocity;
-		} else {
-			velocity.x = -dashAmount * minJumpVelocity;
+			if (!controller.facingLeft) {
+				velocity.x = dashAmount * minJumpVelocity;
+			} else {
+				velocity.x = -dashAmount * minJumpVelocity;
+			}
+			hasDashed = true;
 		}
-		hasDashed = true;
 	}
 
     public void OnJumpInputDown()
@@ -250,6 +256,6 @@ public class Player : MonoBehaviour
     {
         float targetVelocityX = directionalInput.x * moveSpeed;
         velocity.x = Mathf.SmoothDamp(velocity.x, targetVelocityX, ref velocityXSmoothing, (controller.collisions.below ? accelerationTimeGrounded : accelerationTimeAirborne));
-        velocity.y += gravity * Time.deltaTime;
+		velocity.y += gravity * Time.deltaTime;
     }
 }
