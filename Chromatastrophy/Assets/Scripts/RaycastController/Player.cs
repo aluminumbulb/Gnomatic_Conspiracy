@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
 		anim = GetComponent<Animator> ();
-		//pauseMenu.GetComponent<Canvas> ().enabled = false;
+		pauseMenu.GetComponent<Canvas> ().enabled = false;
 
 		source = GetComponent<AudioSource> ();
 
