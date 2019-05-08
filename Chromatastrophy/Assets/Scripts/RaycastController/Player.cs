@@ -156,8 +156,6 @@ public class Player : MonoBehaviour
 
     public void OnJumpInputDown()
     {
-		
-
         if (wallSliding)
         {
             if (wallDirX == directionalInput.x)
@@ -192,7 +190,6 @@ public class Player : MonoBehaviour
             isDoubleJumping = true;
 			jumpfx ();
         }
-
     }
 
 	public void jumpfx(){
