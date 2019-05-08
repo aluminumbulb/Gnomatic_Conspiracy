@@ -28,14 +28,17 @@ public class Orb_Get : MonoBehaviour {
 	void gotten(){
 			if(myOrbType == orbType.Red){
 				gameController.orbGetRed = true;
+				gameController.audioSource.Stop ();
 			}
 
 			if (myOrbType == orbType.Green) {
 				gameController.orbGetGreen = true;
+				gameController.audioSource.Stop ();
 			}
 
 			if (myOrbType == orbType.Blue) {
 				gameController.orbGetBlue = true;
+				gameController.audioSource.Stop ();
 			}
 
 			spikeToAppear.SetActive (true);
