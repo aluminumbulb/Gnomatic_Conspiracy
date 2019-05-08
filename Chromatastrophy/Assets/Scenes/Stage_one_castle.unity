@@ -1642,11 +1642,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4880675464975328, guid: fe2a5901c8c69c241a9cb7db041b56ed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.05
       objectReference: {fileID: 0}
     - target: {fileID: 4880675464975328, guid: fe2a5901c8c69c241a9cb7db041b56ed, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.68
       objectReference: {fileID: 0}
     - target: {fileID: 114384435259545384, guid: fe2a5901c8c69c241a9cb7db041b56ed,
         type: 2}
@@ -16339,7 +16339,7 @@ Prefab:
     - target: {fileID: 114401041475502578, guid: 5b2676b1a814df745abdd39b561a7956,
         type: 2}
       propertyPath: levelName
-      value: Changing_room
+      value: Hub Scene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5b2676b1a814df745abdd39b561a7956, type: 2}
@@ -16358,11 +16358,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4770384640886450, guid: ea545c1930eff28488ee8a32b1606e85, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.05
       objectReference: {fileID: 0}
     - target: {fileID: 4770384640886450, guid: ea545c1930eff28488ee8a32b1606e85, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.68
       objectReference: {fileID: 0}
     - target: {fileID: 4770384640886450, guid: ea545c1930eff28488ee8a32b1606e85, type: 2}
       propertyPath: m_LocalPosition.z
@@ -17199,11 +17199,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4259411922091828, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.05
       objectReference: {fileID: 0}
     - target: {fileID: 4259411922091828, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.68
       objectReference: {fileID: 0}
     - target: {fileID: 114336064968017190, guid: 2ec87eed77d99674b85a9b1f3ca82311,
         type: 2}
