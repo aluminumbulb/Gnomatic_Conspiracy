@@ -28,8 +28,8 @@ public class PlayerInput : MonoBehaviour
         Vector2 directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         player.SetDirectionalInput(directionalInput);
 
-		//Change back to i when done testing!!!
-		if (Input.GetKeyDown("e") ) {
+
+		if (Input.GetKeyDown("i") ) {
 			player.onDash ();
 		}
 
