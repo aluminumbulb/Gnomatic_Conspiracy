@@ -76,7 +76,7 @@ public class Player : MonoBehaviour
         minJumpVelocity = Mathf.Sqrt(2 * Mathf.Abs(gravity) * minJumpHeight);
 
 		anim = GetComponent<Animator> ();
-		//pauseMenu.GetComponent<Canvas> ().enabled = false;
+		pauseMenu.GetComponent<Canvas> ().enabled = false;
 
 		source = GetComponent<AudioSource> ();
 
@@ -156,8 +156,6 @@ public class Player : MonoBehaviour
 
     public void OnJumpInputDown()
     {
-		
-
         if (wallSliding)
         {
             if (wallDirX == directionalInput.x)
@@ -192,7 +190,6 @@ public class Player : MonoBehaviour
             isDoubleJumping = true;
 			jumpfx ();
         }
-
     }
 
 	public void jumpfx(){
