@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-public class GreenRoomTilemapSwitchable : MonoBehaviour {
+public class GreenRoomTileSwap : MonoBehaviour {
 	public GameController gameController;
 	private Tilemap _tilemap;
 	private TilemapCollider2D outline;
@@ -54,32 +54,18 @@ public class GreenRoomTilemapSwitchable : MonoBehaviour {
 		return s_combined;
 	}
 	public void colorize(){
-		if (myColorArea == ColorArea.Red) {
-			if (gameController.orbGetRed){
-				solidify ();
-			} else {
-				liquify ();
-			}
-		}
 
 		if (myColorArea == ColorArea.Green) {
 			if (gameController.orbGetGreen) {
-				gameObject.layer=9;
-			}else{
-				gameObject.layer=11;
+				gameObject.layer = 9;
+				transform.position = new Vector3 (transform.position.x, transform.position.y, 9);
+			} else {
+				gameObject.layer = 11;
+				transform.position = new Vector3 (transform.position.x, transform.position.y, 11);
 			}
 		}
-
-		if (myColorArea == ColorArea.Blue) {
-			if (gameController.orbGetBlue) {
-				solidify ();
-			}else{
-				liquify ();
-			}
-		}
-		_tilemap.color = determineColor();
-
 	}
+
 
 	void solidify(){
 		gameObject.layer = 8;
