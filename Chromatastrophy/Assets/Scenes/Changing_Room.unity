@@ -479,6 +479,11 @@ Prefab:
       propertyPath: m_Tiles.Array.data[5].second.m_ColliderType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 66089942221409840, guid: 9878e3950e3faf34d97dec2a0aa79f87,
+        type: 2}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9878e3950e3faf34d97dec2a0aa79f87, type: 2}
   m_IsPrefabParent: 0
@@ -835,7 +840,7 @@ Prefab:
     - target: {fileID: 114113342251812798, guid: 0161922d6b9681345ae4b477f327a777,
         type: 2}
       propertyPath: levelName
-      value: finalstage_poc
+      value: final_level
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0161922d6b9681345ae4b477f327a777, type: 2}
@@ -899,14 +904,6 @@ Prefab:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1002972550}
-    - target: {fileID: 1414483555873062, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1414483555873062, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ec87eed77d99674b85a9b1f3ca82311, type: 2}
   m_IsPrefabParent: 0

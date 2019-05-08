@@ -15,7 +15,8 @@ public class HurtfulObject : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector2 ray = transform.position;
-		RaycastHit2D hit = Physics2D.CircleCast (transform.position, damageRadius, transform.up);
+		//RaycastHit2D hit = Physics2D.CircleCast (transform.position, damageRadius, transform.up);
+		RaycastHit2D hit = Physics2D.CircleCast (transform.position, damageRadius, new Vector2(0,0));
 		if (hit) {
 			GameObject hitObject = hit.transform.gameObject;
 			if (hitObject.GetComponent<Player> ()) {

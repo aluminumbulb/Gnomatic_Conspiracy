@@ -17,17 +17,26 @@ public class TilemapSwitchable : MonoBehaviour {
 
 	void Awake(){
 		gameController = FindObjectOfType<GameController> ();
+		if(gameController == null){
+			Debug.Log ("controller not found");
+		}
+
+
 		outline = GetComponent<TilemapCollider2D> ();
 		outline.enabled = false;
 		_tilemap = GetComponent<Tilemap> ();
-	}
-
-	void Start (){
-
 
 		preferred_red = preferredColor.r;
 		preferred_green = preferredColor.g;
 		preferred_blue = preferredColor.b;
+	}
+		
+	void Start (){
+
+		outline = GetComponent<TilemapCollider2D> ();
+		outline.enabled = false;
+		_tilemap = GetComponent<Tilemap> ();
+
 	}	
 		
 	private Color determineColor(){
@@ -84,7 +93,7 @@ public class TilemapSwitchable : MonoBehaviour {
 
 	void solidify(){
 		gameObject.layer = 8;
-		transform.position = new Vector3(transform.position.x,transform.position.y,0);
+		transform.position = new Vector3(transform.position.x,transform.position.y,8);
 		outline.enabled = true;
 	}
 
