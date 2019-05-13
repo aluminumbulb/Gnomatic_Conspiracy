@@ -17,6 +17,7 @@ public class TilemapSwitchable : MonoBehaviour {
 
 	void Awake(){
 		gameController = FindObjectOfType<GameController> ();
+
 		if(gameController == null){
 			Debug.Log ("controller not found");
 		}
