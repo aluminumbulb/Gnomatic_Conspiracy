@@ -58513,7 +58513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 0
+  damageRadius: 0.5
   destination: {x: 15.7, y: 105.5, z: 0}
 --- !u!1 &1493313209
 GameObject:
@@ -108037,6 +108037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2108364216}
   - component: {fileID: 2108364218}
+  - component: {fileID: 2108364217}
   m_Layer: 0
   m_Name: sprite_spike (21)
   m_TagString: Untagged
@@ -108057,6 +108058,19 @@ Transform:
   m_Father: {fileID: 1393840191}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &2108364217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2108364215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageRadius: 0
+  destination: {x: 0, y: 0, z: 0}
 --- !u!212 &2108364218
 SpriteRenderer:
   m_ObjectHideFlags: 0
