@@ -7,22 +7,23 @@ public class PlayerInput : MonoBehaviour
 
 	private Collider2D playerCollider;
 	Touch leftTouch, rightTouch, jumpTouch;
+	Vector2 startTouchLeft,startTouchRight;
 	Rect leftRect,rightRect, jumpRect;
-	Vector3 startTouch;
-	public float dashSensitivity = 5;
-    private void Start() {
-		player = GetComponent<Player> ();
+	public int dashSensitivity = 4;
+    
+	private void Start()
+    {
+        player = GetComponent<Player>();
 
-		leftRect = new  Rect (0, 0, Screen.width / 8.0f, Screen.height);
-		rightRect = new Rect ((Screen.width / 8f), 0, Screen.width / 8.0f, Screen.height);
-		jumpRect = new Rect ((Screen.width * (3f / 4f)), 0, Screen.width / 4.0f, Screen.height);
+		leftRect = new  Rect(0, 0, Screen.width / 8.0f, Screen.height);
+		rightRect = new Rect((Screen.width/8f),0, Screen.width / 8.0f,Screen.height);
+		jumpRect = 	new Rect((Screen.width*(3f/4f)),0, Screen.width / 4.0f,Screen.height);
 		playerCollider = GetComponent<BoxCollider2D> ();
+
 
 		leftTouch.phase = TouchPhase.Ended;
 		rightTouch.phase = TouchPhase.Ended;
 		jumpTouch.phase = TouchPhase.Ended;
-	
-
 	}
 
     private void Update()
@@ -69,29 +70,27 @@ public class PlayerInput : MonoBehaviour
 		}
 
 		if (jumpTouch.phase == TouchPhase.Ended) {
-			player.OnJumpInputUp ();
+			 player.OnJumpInputUp ();
 		}
 
-		if ((leftTouch.phase == TouchPhase.Stationary)) {
-			startTouch = leftTouch.position;
+		if ((leftTouch.phase == TouchPhase.Began || leftTouch.phase == TouchPhase.Stationary)) {
 			player.SetDirectionalInput (Vector2.left);
+			startTouchLeft = leftTouch.position;
 		}
 
 		if ((leftTouch.phase == TouchPhase.Moved)) {
-			if (Mathf.Abs (leftTouch.position.x - startTouch.x) > dashSensitivity) {
+			if (Mathf.Abs (leftTouch.position.x - startTouchLeft.x) > dashSensitivity) {
 				player.onDash ();
 			}
 		}
 
-		if ((rightTouch.phase == TouchPhase.Stationary)) {
-			startTouch = leftTouch.position;
+		if ((rightTouch.phase == TouchPhase.Began || rightTouch.phase == TouchPhase.Stationary)) {
+			startTouchRight = rightTouch.position;
 			player.SetDirectionalInput (Vector2.right);
 		}
 
 		if ((rightTouch.phase == TouchPhase.Moved)) {
-			Debug.Log (rightTouch.position.x +" , "+ startTouch.x);
-			if (Mathf.Abs (rightTouch.position.x - startTouch.x) > dashSensitivity) {
-				
+			if (Mathf.Abs (rightTouch.position.x - startTouchRight.x) > dashSensitivity) {
 				player.onDash ();
 			}
 		}
