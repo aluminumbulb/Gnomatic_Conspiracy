@@ -4,19 +4,4 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/title_screen.unity
-    guid: f5876f568f2f0db468a6c620156c3f0f
-  - enabled: 1
-    path: Assets/Scenes/Hub Scene.unity
-    guid: c9d696194b3a6164d84d6bbda2e98de7
-  - enabled: 1
-    path: Assets/Scenes/Stage_one_castle.unity
-    guid: afd26a44fa0df402fa0aa2fb247a9294
-  - enabled: 1
-    path: Assets/Scenes/Green_Room.unity
-    guid: c35aafa911e48184db8a91b12e9ee5bf
-  - enabled: 1
-    path: Assets/Scenes/Stage_three_sewers.unity
-    guid: 612af5d549115e445a38b73ca8418aae
+  m_Scenes: []
