@@ -7,7 +7,7 @@ public class PlayerInput : MonoBehaviour
 
 	private Collider2D playerCollider;
 	Touch leftTouch, rightTouch, jumpTouch;
-	Vector2 startTouchLeft,startTouchRight;
+	Vector2 startTouchJump;//startTouchLeft,startTouchRight;
 	Rect leftRect,rightRect, jumpRect;
 	public int dashSensitivity = 4;
     
@@ -15,9 +15,9 @@ public class PlayerInput : MonoBehaviour
     {
         player = GetComponent<Player>();
 
-		leftRect = new  Rect(0, 0, Screen.width / 8.0f, Screen.height);
-		rightRect = new Rect((Screen.width/8f),0, Screen.width / 8.0f,Screen.height);
-		jumpRect = 	new Rect((Screen.width*(3f/4f)),0, Screen.width / 4.0f,Screen.height);
+		leftRect = new  Rect(0, 0, Screen.width / 5.0f, Screen.height);
+		rightRect = new Rect((Screen.width/5f),0, Screen.width / 5.0f,Screen.height);
+		jumpRect = 	new Rect((Screen.width*(3f/5f)),0, Screen.width*3 / 5.0f,Screen.height);
 		playerCollider = GetComponent<BoxCollider2D> ();
 
 
@@ -53,11 +53,11 @@ public class PlayerInput : MonoBehaviour
 	private void mobileControlls(Touch[] touches){
 		foreach (Touch touch in touches) {
 			if (leftRect.Contains (touch.position)) {
-				leftTouch = touch;
+				player.SetDirectionalInput (Vector2.left);
 			}
 
 			if (rightRect.Contains (touch.position)) {
-				rightTouch = touch;
+				player.SetDirectionalInput (Vector2.right);
 			}
 
 			if(jumpRect.Contains(touch.position)){
@@ -66,32 +66,13 @@ public class PlayerInput : MonoBehaviour
 		}
 
 		if (jumpTouch.phase == TouchPhase.Began) {
+			startTouchJump = jumpTouch.position;
 			player.OnJumpInputDown ();
 		}
 
-		if (jumpTouch.phase == TouchPhase.Ended) {
-			 player.OnJumpInputUp ();
-		}
-
-		if ((leftTouch.phase == TouchPhase.Began || leftTouch.phase == TouchPhase.Stationary)) {
-			player.SetDirectionalInput (Vector2.left);
-			startTouchLeft = leftTouch.position;
-		}
-
-		if ((leftTouch.phase == TouchPhase.Moved)) {
-			if (Mathf.Abs (leftTouch.position.x - startTouchLeft.x) > dashSensitivity) {
-				player.onDash ();
-			}
-		}
-
-		if ((rightTouch.phase == TouchPhase.Began || rightTouch.phase == TouchPhase.Stationary)) {
-			startTouchRight = rightTouch.position;
-			player.SetDirectionalInput (Vector2.right);
-		}
-
-		if ((rightTouch.phase == TouchPhase.Moved)) {
-			if (Mathf.Abs (rightTouch.position.x - startTouchRight.x) > dashSensitivity) {
-				player.onDash ();
+		if (jumpTouch.phase == TouchPhase.Moved) {
+			if(Mathf.Abs(startTouchJump.x - jumpTouch.position.x)>dashSensitivity){
+				player.onDash();
 			}
 		}
 	}
