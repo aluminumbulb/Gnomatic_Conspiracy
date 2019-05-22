@@ -28,6 +28,7 @@ public class Orb_Get : MonoBehaviour {
 			if(myOrbType == orbType.Red){
 				gameController.orbGetRed = true;
 				gameController.audioSource.Stop ();
+				
 			}
 
 			if (myOrbType == orbType.Green) {
