@@ -13,14 +13,10 @@ public class TutorialText : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//if(!GameController.orbGetRed){
-
-		if (t_needTutorial) {
-			tutorialText.SetActive (true);
-		} else {
+				if (!t_needTutorial) {
 			tutorialText.SetActive (false);
 		}
-
+		
 			if(Input.GetKey("up")||Input.GetKey("down")||Input.GetKey("right")||Input.GetKey("left")){
 			t_needTutorial = false;
 		}
