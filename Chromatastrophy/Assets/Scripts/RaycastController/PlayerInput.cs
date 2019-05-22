@@ -27,7 +27,7 @@ public class PlayerInput : MonoBehaviour
         player.SetDirectionalInput(directionalInput);
 
 
-		if (Input.GetKeyDown("i") ) {
+		if (Input.GetKeyDown(KeyCode.Space) ) {
 			player.onDash ();
 		}
 
