@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 50, y: 6, z: 0}
 --- !u!212 &3883958
 SpriteRenderer:
@@ -1382,7 +1382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &70682869
 SpriteRenderer:
@@ -1469,7 +1469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 50, y: 6, z: 0}
 --- !u!212 &120629790
 SpriteRenderer:
@@ -1579,11 +1579,11 @@ Prefab:
       objectReference: {fileID: 844598433}
     - target: {fileID: 4990867264266946, guid: fe2a5901c8c69c241a9cb7db041b56ed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.05
       objectReference: {fileID: 0}
     - target: {fileID: 4990867264266946, guid: fe2a5901c8c69c241a9cb7db041b56ed, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.68
       objectReference: {fileID: 0}
     - target: {fileID: 114540213923494110, guid: fe2a5901c8c69c241a9cb7db041b56ed,
         type: 2}
@@ -1702,7 +1702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &172161231
 SpriteRenderer:
@@ -1861,7 +1861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 30, y: 13, z: 0}
 --- !u!212 &263597700
 SpriteRenderer:
@@ -1990,7 +1990,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 50, y: 6, z: 0}
 --- !u!212 &322248733
 SpriteRenderer:
@@ -2077,7 +2077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &345814023
 SpriteRenderer:
@@ -2153,10 +2153,10 @@ RectTransform:
   m_Father: {fileID: 1065084916}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 194, y: 41.9}
+  m_SizeDelta: {x: -286, y: -358.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &410368694
 MonoBehaviour:
@@ -2181,7 +2181,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 1
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -2238,7 +2238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &524152146
 SpriteRenderer:
@@ -2330,7 +2330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &793690727
 SpriteRenderer:
@@ -2417,7 +2417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &833171591
 SpriteRenderer:
@@ -16741,7 +16741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 50, y: 6, z: 0}
 --- !u!212 &1027569753
 SpriteRenderer:
@@ -16798,6 +16798,7 @@ GameObject:
   - component: {fileID: 1065084915}
   - component: {fileID: 1065084914}
   - component: {fileID: 1065084913}
+  - component: {fileID: 1065084917}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -16873,14 +16874,26 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 410368693}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1114272895}
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1065084917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1065084912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d761cc0cf66d36469248cf9d41ec7d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tutorialText: {fileID: 1065084912}
 --- !u!1 &1082833944
 GameObject:
   m_ObjectHideFlags: 0
@@ -16922,7 +16935,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1082833947
 SpriteRenderer:
@@ -17009,7 +17022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1091495022
 SpriteRenderer:
@@ -17084,7 +17097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 23, y: 6, z: 0}
 --- !u!212 &1114272894
 SpriteRenderer:
@@ -17165,6 +17178,7 @@ Transform:
   - {fileID: 1472225368}
   - {fileID: 1569306231}
   - {fileID: 878490901}
+  - {fileID: 1065084916}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17442,7 +17456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 4, y: 15, z: 0}
 --- !u!212 &1418454161
 SpriteRenderer:
@@ -17577,7 +17591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1472225370
 SpriteRenderer:
@@ -17664,7 +17678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1553461281
 SpriteRenderer:
@@ -17751,7 +17765,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1568001022
 SpriteRenderer:
@@ -17838,7 +17852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1569306233
 SpriteRenderer:
@@ -17925,7 +17939,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1588673072
 SpriteRenderer:
@@ -18069,7 +18083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1852852244
 SpriteRenderer:
@@ -18988,26 +19002,26 @@ CompositeCollider2D:
       - {x: 26.9, y: 26.075}
       - {x: 26.9, y: 24.925001}
       - {x: 30.1, y: 24.925001}
-    - - {x: 24.1, y: 25.075}
-      - {x: 20.9, y: 25.075}
-      - {x: 20.9, y: 23.925001}
-      - {x: 24.1, y: 23.925001}
     - - {x: 36.100002, y: 25.075}
       - {x: 32.9, y: 25.075}
       - {x: 32.9, y: 23.925001}
       - {x: 36.100002, y: 23.925001}
+    - - {x: 24.1, y: 25.075}
+      - {x: 20.9, y: 25.075}
+      - {x: 20.9, y: 23.925001}
+      - {x: 24.1, y: 23.925001}
     - - {x: 45.100002, y: 24.075}
       - {x: 42.9, y: 24.075}
       - {x: 42.9, y: 22.925001}
       - {x: 45.100002, y: 22.925001}
-    - - {x: 19.1, y: 23.075}
-      - {x: 16.9, y: 23.075}
-      - {x: 16.9, y: 21.925001}
-      - {x: 19.1, y: 21.925001}
     - - {x: 48.100002, y: 23.075}
       - {x: 45.9, y: 23.075}
       - {x: 45.9, y: 21.925001}
       - {x: 48.100002, y: 21.925001}
+    - - {x: 19.1, y: 23.075}
+      - {x: 16.9, y: 23.075}
+      - {x: 16.9, y: 21.925001}
+      - {x: 19.1, y: 21.925001}
     - - {x: 15.1, y: 16.075}
       - {x: 12.900001, y: 16.075}
       - {x: 12.900001, y: 14.925}
@@ -23691,7 +23705,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1950176018
 SpriteRenderer:
@@ -23778,7 +23792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 30, y: 13, z: 0}
 --- !u!212 &1959895428
 SpriteRenderer:
@@ -23865,7 +23879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 50, y: 6, z: 0}
 --- !u!212 &1998987398
 SpriteRenderer:
@@ -23939,7 +23953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4276ee4937fc4c19b85a483d05c1e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageRadius: 1
+  damageRadius: 0.5
   destination: {x: 23, y: 6, z: 0}
 --- !u!212 &2048915556
 SpriteRenderer:
