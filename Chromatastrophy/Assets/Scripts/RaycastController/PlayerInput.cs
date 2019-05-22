@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(Player))]
 public class PlayerInput : MonoBehaviour
@@ -6,10 +8,8 @@ public class PlayerInput : MonoBehaviour
     private Player player;
 
 	private Collider2D playerCollider;
-	Touch leftTouch, rightTouch, jumpTouch;
-	Vector2 startTouchJump;//startTouchLeft,startTouchRight;
 	Rect leftRect,rightRect, jumpRect;
-	public int dashSensitivity = 4;
+	public int dashSensitivity = 10;
     
 	private void Start()
     {
@@ -19,11 +19,6 @@ public class PlayerInput : MonoBehaviour
 		rightRect = new Rect((Screen.width/5f),0, Screen.width / 5.0f,Screen.height);
 		jumpRect = 	new Rect((Screen.width*(3f/5f)),0, Screen.width*3 / 5.0f,Screen.height);
 		playerCollider = GetComponent<BoxCollider2D> ();
-
-
-		leftTouch.phase = TouchPhase.Ended;
-		rightTouch.phase = TouchPhase.Ended;
-		jumpTouch.phase = TouchPhase.Ended;
 	}
 
     private void Update()
@@ -52,28 +47,34 @@ public class PlayerInput : MonoBehaviour
 
 	private void mobileControlls(Touch[] touches){
 		foreach (Touch touch in touches) {
+			//Checks for left hand motion
 			if (leftRect.Contains (touch.position)) {
 				player.SetDirectionalInput (Vector2.left);
 			}
 
+			//Check for right hand motion
 			if (rightRect.Contains (touch.position)) {
 				player.SetDirectionalInput (Vector2.right);
 			}
 
-			if(jumpRect.Contains(touch.position)){
-				jumpTouch = touch;
+			//Checks for jump behavor
+			if (jumpRect.Contains (touch.position)) {
+				if (touch.phase == TouchPhase.Began) {
+					player.OnJumpInputDown ();
+				}
+
+				if (touch.phase == TouchPhase.Ended) {
+					player.OnJumpInputUp ();
+				}
+			}
+
+			//Checks for any draggings
+			if (Mathf.Abs(touch.deltaPosition.x) > dashSensitivity) {
+				player.onDash ();
 			}
 		}
-
-		if (jumpTouch.phase == TouchPhase.Began) {
-			startTouchJump = jumpTouch.position;
-			player.OnJumpInputDown ();
-		}
-
-		if (jumpTouch.phase == TouchPhase.Moved) {
-			if(Mathf.Abs(startTouchJump.x - jumpTouch.position.x)>dashSensitivity){
-				player.onDash();
-			}
-		}
+	
 	}
 }
+
+
