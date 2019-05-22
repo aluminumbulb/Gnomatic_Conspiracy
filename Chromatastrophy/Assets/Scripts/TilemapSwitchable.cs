@@ -9,7 +9,7 @@ public class TilemapSwitchable : MonoBehaviour {
 	private Sprite changeling;
 	private string changeName; 
 	public Color preferredColor;
-	private float preferred_red, preferred_green, preferred_blue;
+	private float preferred_red, preferred_green, preferred_blue, preferred_albedo;
 
 	public enum ColorArea{Red,Green,Blue};
 	public ColorArea myColorArea;
@@ -29,6 +29,7 @@ public class TilemapSwitchable : MonoBehaviour {
 		preferred_red = preferredColor.r;
 		preferred_green = preferredColor.g;
 		preferred_blue = preferredColor.b;
+		preferred_albedo = preferredColor.a;
 	}
 		
 	void Start (){
@@ -42,20 +43,26 @@ public class TilemapSwitchable : MonoBehaviour {
 	private Color determineColor(){
 		if (gameController.orbGetRed) {
 			s_combined.r = preferred_red;
+			s_combined.a = preferred_albedo;
 		} else {
 			s_combined.r = 0f;
+			s_combined.a = 0f;
 		}
 
 		if (gameController.orbGetGreen) {
 			s_combined.g = preferred_green;
+			s_combined.a = preferred_albedo;
 		} else {
 			s_combined.g = 0f;
+			s_combined.a = 0f;
 		}
 
 		if (gameController.orbGetBlue) {
 			s_combined.b = preferred_blue;
+			s_combined.a = preferred_albedo;
 		} else {
 			s_combined.b = 0f;
+			s_combined.a = 0f;
 		}
 
 		s_combined.a = 255f;
