@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class CharacterController2D : MonoBehaviour
@@ -19,6 +20,7 @@ public class CharacterController2D : MonoBehaviour
 	private bool m_FacingRight = false;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 	private SpriteRenderer m_render;
+
 
 	[Header("Events")]
 	[Space]
@@ -42,10 +44,11 @@ public class CharacterController2D : MonoBehaviour
 			OnCrouchEvent = new BoolEvent();
 
 		m_render = GetComponent<SpriteRenderer> ();
+
 	}
 
 	private void FixedUpdate()
-	{
+	{		
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
 
@@ -116,12 +119,14 @@ public class CharacterController2D : MonoBehaviour
 			// If the input is moving the player right and the player is facing left...
 			if (move > 0 && !m_FacingRight)
 			{
+				
 				// ... flip the player.
 				Flip();
 			}
 			// Otherwise if the input is moving the player left and the player is facing right...
 			else if (move < 0 && m_FacingRight)
 			{
+				
 				// ... flip the player.
 				Flip();
 			}
@@ -129,6 +134,8 @@ public class CharacterController2D : MonoBehaviour
 		// If the player should jump...
 		if (m_Grounded && jump)
 		{
+			
+
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
