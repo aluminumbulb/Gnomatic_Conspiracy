@@ -17,10 +17,6 @@ public class TilemapSwitchable : MonoBehaviour {
 
 	void Awake(){
 		gameController = FindObjectOfType<GameController> ();
-		if(gameController == null){
-			Debug.Log ("controller not found");
-		}
-
 
 		outline = GetComponent<TilemapCollider2D> ();
 		outline.enabled = false;
@@ -30,6 +26,7 @@ public class TilemapSwitchable : MonoBehaviour {
 		preferred_green = preferredColor.g;
 		preferred_blue = preferredColor.b;
 		preferred_albedo = preferredColor.a;
+		s_combined.a = 0;
 	}
 		
 	void Start (){
@@ -38,35 +35,44 @@ public class TilemapSwitchable : MonoBehaviour {
 		outline.enabled = false;
 		_tilemap = GetComponent<Tilemap> ();
 
+		
 	}	
 		
 	private Color determineColor(){
 		if (gameController.orbGetRed) {
 			s_combined.r = preferred_red;
-			s_combined.a = preferred_albedo;
+			//s_combined.a = preferred_albedo;
 		} else {
 			s_combined.r = 0f;
-			s_combined.a = 0f;
+			//s_combined.a = 0f;
 		}
 
 		if (gameController.orbGetGreen) {
 			s_combined.g = preferred_green;
-			s_combined.a = preferred_albedo;
+			//s_combined.a = preferred_albedo;
 		} else {
 			s_combined.g = 0f;
-			s_combined.a = 0f;
+			//s_combined.a = 0f;
 		}
 
 		if (gameController.orbGetBlue) {
 			s_combined.b = preferred_blue;
-			s_combined.a = preferred_albedo;
+			//s_combined.a = preferred_albedo;
 		} else {
 			s_combined.b = 0f;
-			s_combined.a = 0f;
+			//s_combined.a = 0f;
 		}
+		//This block makes tiles dissapear if rooms dont match orb get types
 
-		s_combined.a = 255f;
-
+		if (gameController.orbGetRed && myColorArea == ColorArea.Red) {
+			s_combined.a = 255f;
+		}
+		if (gameController.orbGetGreen && myColorArea == ColorArea.Green) {
+			s_combined.a = 255f;
+		}
+		if (gameController.orbGetBlue && myColorArea == ColorArea.Blue) {
+			s_combined.a = 255f;
+		}
 		return s_combined;
 	}
 
@@ -105,8 +111,11 @@ public class TilemapSwitchable : MonoBehaviour {
 	}
 
 	void liquify(){
-		gameObject.layer = 10;
-		transform.position = new Vector3(transform.position.x,transform.position.y,10);
+		//gameObject.layer = 10;
+		//gameObject.layer = 8;
+		transform.position = new Vector3(transform.position.x,transform.position.y,8);
+
+		//transform.position = new Vector3(transform.position.x,transform.position.y,10);
 		outline.enabled = false;
 	}
 

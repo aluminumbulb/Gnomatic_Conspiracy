@@ -15,7 +15,7 @@ public class Orb_Get : MonoBehaviour {
 	void Start () { 
 		gameController = GameObject.FindObjectOfType<GameController> ();
 	}
-	
+		
 	// Update is called once per frame
 	void LateUpdate () {
 		RaycastHit2D surrounding = Physics2D.CircleCast(transform.position,0.65f,new Vector2(0,0));
@@ -24,25 +24,28 @@ public class Orb_Get : MonoBehaviour {
 		}
 	}
 
-	void gotten(){
+	public void gotten(){
 			if(myOrbType == orbType.Red){
 				gameController.orbGetRed = true;
+				spikeToAppear.SetActive (true);	
 				gameController.audioSource.Stop ();
 				
 			}
 
 			if (myOrbType == orbType.Green) {
 				gameController.orbGetGreen = true;
+				spikeToAppear.SetActive (true);
 				gameController.audioSource.Stop ();
 			}
 
 			if (myOrbType == orbType.Blue) {
 				gameController.orbGetBlue = true;
+				spikeToAppear.SetActive (true);
 				gameController.audioSource.Stop ();
 			}
 
-			spikeToAppear.SetActive (true);
-
+			//spikeToAppear.SetActive (true);
+			
 			gameController.paintWorld ();
 			Destroy (this.gameObject);
 		}

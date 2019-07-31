@@ -5,6 +5,8 @@ using UnityEngine;
 public class HurtfulObject : MonoBehaviour {
 
 	public float damageRadius;
+	public float damageHeight;
+	public float damageWidth;
 	public Vector3 destination;
 
 	// Use this for initialization
@@ -16,7 +18,9 @@ public class HurtfulObject : MonoBehaviour {
 	void Update () {
 		Vector2 ray = transform.position;
 		//RaycastHit2D hit = Physics2D.CircleCast (transform.position, damageRadius, transform.up);
-		RaycastHit2D hit = Physics2D.CircleCast (transform.position, damageRadius, new Vector2(0,0));
+		//Physics2D.BoxCast(transform.position,new Vector2(damageWidth,damageHeight),0,new Vector2(0,0));
+		//RaycastHit2D hit = Physics2D.BoxCast (transform.position, damageRadius, new Vector2(0,0));
+		RaycastHit2D hit = Physics2D.BoxCast(transform.position,new Vector2(damageHeight,damageWidth),0,new Vector2(0,0));
 		if (hit) {
 			GameObject hitObject = hit.transform.gameObject;
 			if (hitObject.GetComponent<Player> ()) {

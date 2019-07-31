@@ -31,12 +31,12 @@ public class PlayerInput : MonoBehaviour
 			player.onDash ();
 		}
 
-        if (Input.GetButtonDown("Vertical"))
+		if ((Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow)))
         {
             player.OnJumpInputDown();
         }
 
-        if (Input.GetButtonUp("Vertical"))
+		if ((Input.GetKeyUp(KeyCode.W)||Input.GetKeyUp(KeyCode.UpArrow)))
         {
             player.OnJumpInputUp();
         }

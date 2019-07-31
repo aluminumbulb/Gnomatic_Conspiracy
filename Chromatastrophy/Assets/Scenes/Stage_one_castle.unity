@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 50, y: 6, z: 0}
 --- !u!212 &3883958
 SpriteRenderer:
@@ -1383,6 +1385,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &70682869
 SpriteRenderer:
@@ -1470,6 +1474,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 50, y: 6, z: 0}
 --- !u!212 &120629790
 SpriteRenderer:
@@ -1703,6 +1709,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &172161231
 SpriteRenderer:
@@ -1862,6 +1870,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 30, y: 13, z: 0}
 --- !u!212 &263597700
 SpriteRenderer:
@@ -1991,6 +2001,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 50, y: 6, z: 0}
 --- !u!212 &322248733
 SpriteRenderer:
@@ -2078,6 +2090,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &345814023
 SpriteRenderer:
@@ -2239,6 +2253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &524152146
 SpriteRenderer:
@@ -2331,6 +2347,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &793690727
 SpriteRenderer:
@@ -2418,6 +2436,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &833171591
 SpriteRenderer:
@@ -16742,6 +16762,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 50, y: 6, z: 0}
 --- !u!212 &1027569753
 SpriteRenderer:
@@ -16936,6 +16958,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1082833947
 SpriteRenderer:
@@ -17023,6 +17047,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1091495022
 SpriteRenderer:
@@ -17098,6 +17124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 23, y: 6, z: 0}
 --- !u!212 &1114272894
 SpriteRenderer:
@@ -17457,6 +17485,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 4, y: 15, z: 0}
 --- !u!212 &1418454161
 SpriteRenderer:
@@ -17592,6 +17622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1472225370
 SpriteRenderer:
@@ -17679,6 +17711,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1553461281
 SpriteRenderer:
@@ -17766,6 +17800,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1568001022
 SpriteRenderer:
@@ -17853,6 +17889,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1569306233
 SpriteRenderer:
@@ -17940,6 +17978,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1588673072
 SpriteRenderer:
@@ -18084,6 +18124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1852852244
 SpriteRenderer:
@@ -23706,6 +23748,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 60, y: 20.5, z: 0}
 --- !u!212 &1950176018
 SpriteRenderer:
@@ -23793,6 +23837,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 30, y: 13, z: 0}
 --- !u!212 &1959895428
 SpriteRenderer:
@@ -23880,6 +23926,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 50, y: 6, z: 0}
 --- !u!212 &1998987398
 SpriteRenderer:
@@ -23954,6 +24002,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageRadius: 0.5
+  damageHeight: 1
+  damageWidth: 0.5
   destination: {x: 23, y: 6, z: 0}
 --- !u!212 &2048915556
 SpriteRenderer:

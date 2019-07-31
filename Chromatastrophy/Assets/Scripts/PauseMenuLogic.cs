@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuLogic : MonoBehaviour {
 	GameController _gameController;
 	Player _player;
 
-	//As of now, the player must be rigged up in inspector to make resume work
-
 	void Awake () {
 		_gameController = GameObject.FindObjectOfType <GameController>();
+		_player = GameObject.FindObjectOfType<Player> ();
 	}
 
+
 	public void Save (){
-		_gameController.Save ();
+		_gameController.Save (_player.transform.position, SceneManager.GetActiveScene().name);
 	}
 
 	public void Load(){
