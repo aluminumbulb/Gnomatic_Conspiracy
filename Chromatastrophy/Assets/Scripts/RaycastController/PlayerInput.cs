@@ -23,25 +23,24 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        Vector2 directionalInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        player.SetDirectionalInput(directionalInput);
+		if (!player.paused) {
+			Vector2 directionalInput = new Vector2 (Input.GetAxisRaw ("Horizontal"), Input.GetAxisRaw ("Vertical"));
+			player.SetDirectionalInput (directionalInput);
 
+			if (Input.GetKeyDown (KeyCode.Space)) {
+				player.onDash ();
+			}
 
-		if (Input.GetKeyDown(KeyCode.Space) ) {
-			player.onDash ();
-		}
+			if ((Input.GetKeyDown (KeyCode.W) || Input.GetKeyDown (KeyCode.UpArrow))) {
+				player.OnJumpInputDown ();
+			}
 
-		if ((Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow)))
-        {
-            player.OnJumpInputDown();
-        }
-
-		if ((Input.GetKeyUp(KeyCode.W)||Input.GetKeyUp(KeyCode.UpArrow)))
-        {
-            player.OnJumpInputUp();
-        }
-		if (Input.touches.Length > 0) {
-			mobileControlls (Input.touches);
+			if ((Input.GetKeyUp (KeyCode.W) || Input.GetKeyUp (KeyCode.UpArrow))) {
+				player.OnJumpInputUp ();
+			}
+			if (Input.touches.Length > 0) {
+				mobileControlls (Input.touches);
+			}
 		}
     }
 

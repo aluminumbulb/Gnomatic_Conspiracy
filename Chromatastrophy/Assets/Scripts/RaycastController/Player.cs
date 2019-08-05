@@ -51,7 +51,9 @@ public class Player : MonoBehaviour
 
 	private Animator anim;
 	public Canvas pauseMenu;
-	private bool paused = false;
+
+	[HideInInspector]
+	public bool paused = false;
 
 	public void Awake(){
 		if (player == null) {
@@ -122,12 +124,14 @@ public class Player : MonoBehaviour
 		paused = true;
 		yield return new WaitForSeconds (1);
 		pauseMenu.GetComponent<Canvas> ().enabled = true;
+		Time.timeScale = 0;
 	}
 
 	public void Unpause(){
 		anim.SetBool ("paused", false);
 		paused = false;
 		pauseMenu.GetComponent<Canvas> ().enabled = false;
+		Time.timeScale = 1;
 
 	}
 
